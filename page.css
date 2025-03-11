@@ -1,0 +1,31 @@
+/* The character name. */
+h1 {
+    font-family: "Acme";
+    font-size: 3rem;
+    margin-bottom: 0;
+}
+
+/* The top line of table headers. */
+table thead tr th {
+    font-family: "Acme";
+    font-size: 125%;
+    text-align: center;
+}
+
+/* The second line of table headers, if any. */
+table thead tr td {
+    font-weight: bold;
+}
+
+/* For skill and power notes. */
+.note {
+    color: var(--bs-secondary);
+    font-size: 85%;
+    font-style: italic;
+}
+
+/* For custom power names. */
+.powerName {
+    font-style: italic;
+    font-weight: bold;
+}
