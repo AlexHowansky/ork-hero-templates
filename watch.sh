@@ -15,4 +15,4 @@ then
 fi
 
 clear
-ls *.html *.js *.css | entr ./build.php "${BUILD_TARGET}"
+ls *.html *.js *.css blocks/* | entr ./build.php "${BUILD_TARGET}"
