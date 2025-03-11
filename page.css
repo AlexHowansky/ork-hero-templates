@@ -1,5 +1,6 @@
 /* The character name. */
 h1 {
+    color: var(--bs-info);
     font-family: "Acme";
     font-size: 3rem;
     margin-bottom: 0;
@@ -7,6 +8,7 @@ h1 {
 
 /* The top line of table headers. */
 table thead tr th {
+    color: var(--bs-primary) !important;
     font-family: "Acme";
     font-size: 125%;
     text-align: center;
@@ -17,15 +19,16 @@ table thead tr td {
     font-weight: bold;
 }
 
+/* For custom names given to perks, powers, skills, etc. */
+.name {
+    color: var(--bs-success);
+    font-style: italic;
+    font-weight: bold;
+}
+
 /* For skill and power notes. */
 .note {
     color: var(--bs-secondary);
     font-size: 85%;
     font-style: italic;
-}
-
-/* For custom power names. */
-.powerName {
-    font-style: italic;
-    font-weight: bold;
 }
