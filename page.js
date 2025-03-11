@@ -43,9 +43,11 @@ if (configJson.length > 0) {
     }
 }
 
-document.onkeypress = function (event) {
-    if (String.fromCharCode(event.keyCode) === 't') {
-        let html = document.querySelector('html');
-        html.setAttribute('data-bs-theme', html.getAttribute('data-bs-theme') == 'light' ? 'dark' : 'light');
+addEventListener('keypress', (event) => {
+    switch (event.key) {
+        case 't':
+            let html = document.querySelector('html');
+            html.setAttribute('data-bs-theme', html.getAttribute('data-bs-theme') == 'light' ? 'dark' : 'light');
+            break;
     }
-}
+});
