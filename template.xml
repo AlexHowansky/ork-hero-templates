@@ -1,5 +1,3 @@
-<!--TEMPLATE_NAME-->Alex Bootstrap<!--/TEMPLATE_NAME-->
-<!--TEMPLATE_DESCRIPTION-->Something modern for a change.<!--/TEMPLATE_DESCRIPTION-->
 <!--FILE_EXTENSION-->html<!--/FILE_EXTENSION-->
 <!--REG_REPLACE-->
     <!--REGSTRING-->\b1/2d(\d)\b<!--/REGSTRING-->

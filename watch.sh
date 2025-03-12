@@ -8,11 +8,17 @@ then
     exit 1
 fi
 
-if [ -z "${BUILD_TARGET}" ]
+if [ -z "${BUILD_TARGET_DIR}" ]
 then
-    echo "BUILD_TARGET is not set. Copy .env.dist to .env and edit as needed."
+    echo "BUILD_TARGET_DIR is not set. Copy .env.dist to .env and edit as needed."
+    exit 1
+fi
+
+if [ ! -w "${BUILD_TARGET_DIR}" ]
+then
+    echo "BUILD_TARGET_DIR is not writable. Check permissions."
     exit 1
 fi
 
 clear
-ls *.html *.js *.css blocks/* | entr ./build.php "${BUILD_TARGET}"
+ls *.html *.html *.js *.css blocks/* layouts/* | entr ./build.php "${BUILD_TARGET_DIR}"
