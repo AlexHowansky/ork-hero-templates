@@ -15,62 +15,67 @@ The following hotkeys are supported:
 
 ### Customization
 
-Various features of this template can be configured from metadata stored in the source character sheet. This allows for
-customization of the resulting page without the need to edit HTML or CSS. The following themes may be set:
+Various features of this template can be configured from metadata stored in the character sheet itself. This allows for
+customization of the resulting page without the need to edit HTML or CSS. To enable this feature, insert a JSON block
+into the `Campaign Use` field on the `Background` tab of your character and edit as desired. If you're not familiar with
+JSON, see [json.org](https://www.json.org/json-en.html). The JSON data in this field will be extracted by the template
+at runtime and applied to the page dynamically.
 
-|Theme|
-|-|
-|light|
-|dark|
+Example:
+
+```json
+{
+    "theme": "dark",
+    "font": {
+        "default": {
+            "name": "Montserrat",
+            "uri": "https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+        },
+        "header": {
+            "name": "Bangers",
+            "uri": "https://fonts.googleapis.com/css2?family=Bangers&display=swap"
+        },
+        "title": {
+            "name": "Poller One",
+            "uri": "https://fonts.googleapis.com/css2?family=Poller+One&display=swap"
+        }
+    },
+    "color": {
+        "default": "blue",
+        "header": "green",
+        "title": "red"
+    }
+}
+```
+
+The following items may be customized:
+
+#### Color Themes
+
+|JSON key|Theme|
+|-|-|
+|`theme`|light|
+|`theme`|dark|
 
 The following fonts may be changed:
 
 |JSON Key|Where Used|Default|
 |-|-|-|
-|title|The large character name at the top of the page.|Acme|
-|header|The header line at the top of each table block.|Acme|
-|default|All other text.|system-ui|
+|`font.title.name`|The large character name at the top of the page.|Acme|
+|`font.header.name`|The header line at the top of each table block.|Acme|
+|`font.default.name`|All other text.|system-ui|
 
-Create a JSON block as follows and paste into the Campaign Use field on the Background tab. These values will be
-extracted at runtime and applied to the page dynamically.
+The following colors may be changed:
 
-```json
-{
-    "font": {
-        "default": {
-            "name": "Noto Sans"
-        },
-        "header": {
-            "name": "DynaPuff"
-        },
-        "title": {
-            "name": "Poller One"
-        }
-    },
-    "theme": "dark"
-}
-```
+|JSON Key|Where Used|
+|-|-|
+|`color.title`|The large character name at the top of the page.|
+|`color.header`|The header line at the top of each table block.|
+|`color.default`|All other text.|
 
-If only `name` is provided, the template will attempt to automatically acquire the required files from [Google Fonts](https://fonts.google.com).
-If this does not work, or a more specific configuration is desired, the CSS URI may be specified:
-
-```json
-{
-    "font": {
-        "default": {
-            "name": "Noto Sans",
-            "uri": "https://fonts.googleapis.com/css2?family=Noto+Sans:wdth,wght@87.5,300&display=swap"
-        },
-        "header": {
-            "name": "DynaPuff"
-        },
-        "title": {
-            "name": "Poller One"
-        }
-    },
-    "theme": "dark"
-}
-```
+For fonts, if only `name` is provided, the template will attempt to automatically acquire the required files from
+[Google Fonts](https://fonts.google.com). If this does not work, or a more specific configuration is desired, an
+explicit CSS URI may be specified.
 
 ### Development
 
