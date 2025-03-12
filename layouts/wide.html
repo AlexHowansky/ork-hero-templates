@@ -1,27 +1,66 @@
+
 <div class="container-fluid">
-    <div class="row g-2">
-        <div class="col-4">
-            <!--CHARACTERISTICS_BLOCK-->
-            <div class="container-fluid p-0">
-                <div class="row g-2">
-                    <div class="col-4">
-                        <!--COMBAT_INFO_BLOCK-->
-                        <!--DEFENSE_BLOCK-->
-                        <!--COMBAT_LEVELS_BLOCK-->
-                    </div>
-                    <div class="col-8">
-                        <!--COMBAT_MANEAUVERS_BLOCK-->
-                        <!--RANGE_MODIFIERS_BLOCK-->
-                    </div>
+    <ul class="nav nav-tabs">
+        <li class="nav-item pe-1">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#characteristics_pane" type="button" id="characteristics_button">
+                <i class="fa-solid fa-user"></i>
+                Characteristics
+            </button>
+        </li>
+        <li class="nav-item pe-1">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#powers_pane" type="button" id="powers_button">
+                <i class="fa-solid fa-bolt-lightning"></i>
+                Powers
+            </button>
+        </li>
+        <li class="nav-item pe-1">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#background_pane" type="button" id="background_button">
+                <i class="fa-solid fa-book"></i>
+                Background
+            </button>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane show active" id="characteristics_pane">
+            <div class="row g-2">
+                <div class="col-4">
+                    <!--CHARACTERISTICS_BLOCK-->
+                </div>
+                <div class="col-2">
+                    <!--SKILLS_BLOCK-->
+                </div>
+                <div class="col-2">
+                    <!--PERKS_BLOCK-->
+                    <!--TALENTS_BLOCK-->
+                </div>
+                <div class="col-4">
+                    <!--RANGE_MODIFIERS_BLOCK-->
+                    <!--COMBAT_INFO_BLOCK-->
+                    <!--DEFENSE_BLOCK-->
+                    <!--COMBAT_LEVELS_BLOCK-->
+                    <!--COMBAT_MANEAUVERS_BLOCK-->
                 </div>
             </div>
-            <!--DISADS_BLOCK-->
         </div>
-        <div class="col-3">
-            <!--SKILLS_BLOCK-->
-            <!--PERKS_BLOCK-->
-            <!--TALENTS_BLOCK-->
+        <div class="tab-pane" id="powers_pane">
+            <div class="row g-2">
+                <div class="col-6">
+                    <!--POWERS_BLOCK-->
+                </div>
+                <div class="col-6">
+                    <!--DISADS_BLOCK-->
+                </div>
+            </div>
         </div>
-        <div class="col-5"><!--POWERS_BLOCK--></div>
+        <div class="tab-pane" id="background_pane">
+            <div class="row g-2">
+                <div class="col-6">
+                    <!--BACKGROUND_BLOCK-->
+                </div>
+                <div class="col-6">
+                    <!--IMAGE_BLOCK-->
+                </div>
+            </div>
+        </div>
     </div>
 </div>
