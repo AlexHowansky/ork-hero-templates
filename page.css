@@ -26,6 +26,19 @@ table thead tr td {
     font-weight: bold;
 }
 
+.nav .nav-link.active {
+    background-color: #e2e3e5 !important;
+    color: var(--bs-primary) !important;
+}
+
+.nav .nav-link {
+    background-color: var(--bs-secondary) !important;
+    color: var(--bs-dark) !important;
+    font-family: "Acme";
+    font-size: 125%;
+    font-weight: bold;
+}
+
 /* For skill and power notes. */
 .note {
     color: var(--bs-secondary);
