@@ -41,32 +41,75 @@ the README to build a new template.
 			</div>
 		</div>
 		<div class="container-fluid">
-			<div class="row g-2">
-				<div class="col-4">
+			<ul class="nav nav-tabs">
+				<li class="nav-item pe-1">
+					<button class="nav-link active" data-bs-toggle="tab" data-bs-target="#characteristics" type="button">
+						<i class="fa-solid fa-user"></i>
+						Characteristics
+					</button>
+				</li>
+				<li class="nav-item pe-1">
+					<button class="nav-link" data-bs-toggle="tab" data-bs-target="#skills" type="button">
+						<i class="fa-solid fa-flask"></i>
+						Skills
+					</button>
+				</li>
+				<li class="nav-item pe-1">
+					<button class="nav-link" data-bs-toggle="tab" data-bs-target="#powers" type="button">
+						<i class="fa-solid fa-bolt-lightning"></i>
+						Powers
+					</button>
+				</li>
+				<li class="nav-item pe-1">
+					<button class="nav-link" data-bs-toggle="tab" data-bs-target="#combat" type="button">
+						<i class="fa-solid fa-hand-fist"></i>
+						Combat
+					</button>
+				</li>
+				<li class="nav-item pe-1">
+					<button class="nav-link" data-bs-toggle="tab" data-bs-target="#disads" type="button">
+						<i class="fa-solid fa-face-sad-tear"></i>
+						Disads
+					</button>
+				</li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane show active" id="characteristics">
 					<!--CHARACTERISTICS_BLOCK-->
-					<div class="container-fluid p-0">
-						<div class="row g-2">
-							<div class="col-4">
-								<!--COMBAT_INFO_BLOCK-->
-								<!--DEFENSE_BLOCK-->
-								<!--COMBAT_LEVELS_BLOCK-->
-							</div>
-							<div class="col-8">
-								<!--COMBAT_MANEAUVERS_BLOCK-->
-								<!--RANGE_MODIFIERS_BLOCK-->
-							</div>
+				</div>
+				<div class="tab-pane" id="skills">
+					<div class="row g-2">
+						<div class="col-6">
+							<!--SKILLS_BLOCK-->
+						</div>
+						<div class="col-6">
+							<!--PERKS_BLOCK-->
+							<!--TALENTS_BLOCK-->
 						</div>
 					</div>
+				</div>
+				<div class="tab-pane" id="powers">
+					<!--POWERS_BLOCK-->
+				</div>
+				<div class="tab-pane" id="combat">
+					<div class="row g-2">
+						<div class="col-5">
+							<!--COMBAT_INFO_BLOCK-->
+							<!--DEFENSE_BLOCK-->
+							<!--COMBAT_LEVELS_BLOCK-->
+						</div>
+						<div class="col-7">
+							<!--RANGE_MODIFIERS_BLOCK-->
+							<!--COMBAT_MANEAUVERS_BLOCK-->
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane" id="disads">
 					<!--DISADS_BLOCK-->
 				</div>
-				<div class="col-3">
-					<!--SKILLS_BLOCK-->
-					<!--PERKS_BLOCK-->
-					<!--TALENTS_BLOCK-->
-				</div>
-				<div class="col-5"><!--POWERS_BLOCK--></div>
 			</div>
 		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<script>/*JS_BLOCK*/</script>
 	</body>
 </html>
