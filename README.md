@@ -106,6 +106,12 @@ Source files are separated into chunks according to type so that content-aware I
  To assemble the layouts into `*.hde` templates, run:
 
 ```sh
+./build.php
+```
+
+This will create one template per layout, in the `dist` subdirectory. An optional target directory override may be specified:
+
+```sh
 ./build.php /path/to/template/directory
 ```
 

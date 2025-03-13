@@ -1,11 +1,6 @@
 #!/usr/bin/env php
 <?php
 
-if ($argc < 2) {
-    printf("Usage: %s </path/to/template/directory>\n", $argv[0]);
-    exit(1);
-}
-
 foreach (glob('layouts/*.html') as $layoutHtml) {
     $layoutXml = preg_replace('/\.html$/', '.xml', $layoutHtml);
     $layoutName = sprintf('Ork %s', ucfirst(basename($layoutHtml, '.html')));
@@ -26,6 +21,6 @@ foreach (glob('layouts/*.html') as $layoutHtml) {
         array_map(fn(string $block): string => file_get_contents(sprintf('page.%s', $block)), $blocks),
         $output
     );
-    $outputFile = sprintf('%s/%s.hde', rtrim($argv[1], '/'), $layoutName);
+    $outputFile = sprintf('%s/%s.hde', rtrim($argv[1] ?? './dist', '/'), $layoutName);
     printf("Wrote %d bytes to %s\n", file_put_contents($outputFile, $output), $outputFile);
 }
