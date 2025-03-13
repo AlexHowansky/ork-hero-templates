@@ -21,6 +21,6 @@ foreach (glob('layouts/*.html') as $layoutHtml) {
         array_map(fn(string $block): string => file_get_contents(sprintf('page.%s', $block)), $blocks),
         $output
     );
-    $outputFile = sprintf('%s/%s.hde', rtrim($argv[1] ?? './dist', '/'), $layoutName);
+    $outputFile = sprintf('%s/%s.hde', rtrim($argv[1] ?? './dist' ?: './dist', '/'), $layoutName);
     printf("Wrote %d bytes to %s\n", file_put_contents($outputFile, $output), $outputFile);
 }
