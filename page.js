@@ -45,6 +45,24 @@ if (configJson.length > 0) {
 
 addEventListener('keypress', (event) => {
     switch (event.key) {
+        case 'c':
+            bootstrap.Tab.getInstance(document.querySelector('#characteristics_button')).show();
+            break;
+        case 'b':
+            bootstrap.Tab.getInstance(document.querySelector('#background_button')).show();
+            break;
+        case 'd':
+            bootstrap.Tab.getInstance(document.querySelector('#disads_button')).show();
+            break;
+        case 'o':
+            bootstrap.Tab.getInstance(document.querySelector('#combat_button')).show();
+            break;
+        case 'p':
+            bootstrap.Tab.getInstance(document.querySelector('#powers_button')).show();
+            break;
+        case 's':
+            bootstrap.Tab.getInstance(document.querySelector('#skills_button')).show();
+            break;
         case 't':
             let html = document.querySelector('html');
             html.setAttribute('data-bs-theme', html.getAttribute('data-bs-theme') == 'light' ? 'dark' : 'light');
