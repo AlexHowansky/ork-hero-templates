@@ -1,25 +1,37 @@
-### Description
+# Ork HERO Templates
 
-This is an export template for the [HERO Designer](https://www.herogames.com/store/product/1-hero-designer/) software
-from [herogames.com](https://herogames.com). This template is _not_ designed for physical printing or PDF export, rather
-it is intended to be used as an HTML page directly in a browser. It makes maximal use of a 16:9 display area and has
-active JavaScript elements intended to ensure that scrolling is never required.
+## Description
 
-### Active Features
+This project contains a set of [HERO Designer](https://www.herogames.com/store/product/1-hero-designer/) character export templates with customizable features and active elements, intended for use directly in a browser during a virtual gaming session. These templates should never be used for physical printing or PDF export. The project's top priorities are to maximize use of screen real estate, minimize scrolling, and eliminate the need to have the HERO Designer application open while playing.
+
+### Layouts
+
+A layout defines a particular arrangement of display items. There are multiple layouts available, each provided as a separate template file. The informational content of each layout is identical, only the positioning of elements differs.
+
+|File|Description|
+|-|-|
+|`Ork 16x9.hde`|This layout is intended to fit a maximized window on a 16:9 monitor.|
+|`Ork 8x9.hde`|This layout is intended to fit a half-wide window on a 16:9 monitor.|
+
+## Active Features
 
 The following hotkeys are supported:
 
 |Key|Feature|
 |:-:|-|
 |t|Toggle light/dark mode.|
+|c|Navigate to the Characteristics tab.|
+|s|Navigate to the Skills tab.|
+|p|Navigate to the Powers tab.|
+|o|Navigate to the Combat tab.|
+|d|Navigate to the Disads tab.|
+|b|Navigate to the Background tab.|
 
-### Customization
+## Customization
 
-Various features of this template can be configured from metadata stored in the character sheet itself. This allows for
-customization of the resulting page without the need to edit HTML or CSS. To enable this feature, insert a JSON block
-into the `Campaign Use` field on the `Background` tab of your character and edit as desired. If you're not familiar with
-JSON, see [json.org](https://www.json.org/json-en.html). The JSON data in this field will be extracted by the template
-at runtime and applied to the page dynamically.
+Various features of this template can be configured from metadata stored in the character sheet itself. This allows for automatic customization of the resulting output, every time it is exported, without the need to subsequently edit HTML or CSS.
+
+This is accomplished by storing a [JSON](https://www.json.org/json-en.html) block of configuration data in the `Campaign Use` field on the `Background` tab of your character file. The JSON data in this block will be extracted by the template when the page loads in the browser and the customizations will be applied to the page dynamically.
 
 Example:
 
@@ -50,7 +62,7 @@ Example:
 
 The following items may be customized:
 
-#### Color Themes
+### Color Themes
 
 |JSON key|Theme|
 |-|-|
@@ -73,17 +85,28 @@ The following colors may be changed:
 |`color.header`|The header line at the top of each table block.|
 |`color.default`|All other text.|
 
-For fonts, if only `name` is provided, the template will attempt to automatically acquire the required files from
-[Google Fonts](https://fonts.google.com). If this does not work, or a more specific configuration is desired, an
-explicit CSS URI may be specified.
+For fonts, if only `name` is provided, the template will attempt to automatically acquire the required files from [Google Fonts](https://fonts.google.com). If this does not work, or a more specific configuration is desired, an explicit CSS URI may be specified.
 
-### Development
+## Development
 
-Source files are separated into blocks and named according to type so that content-aware IDEs can offer proper tooling.
-To assemble the blocks and build the `*.hde` template, run:
+The templates make use of [Twitter Bootstrap](https://getbootstrap.com/) and [Font Awesome](fontawesome.com) (both pulled dynamically from [cdnjs](https://cdnjs.com/)), and [Google Web Fonts](https://fonts.google.com/).
+
+Source files are separated into chunks according to type so that content-aware IDEs can offer proper tooling.
+
+|File|Contents|
+|-|-|
+|`page.html`|Common HTML page wrapper for all layouts.|
+|`page.css`|Common CSS for all layouts.|
+|`page.js`|Common JS for all layouts.|
+|`template.xml`|Common template tags for all layouts.|
+|`layouts/*.html`|Layout-specific HTML.|
+|`layouts/*.xml`|Layout-specific template tags.|
+|`blocks/*.html`|Definitions for HTML blocks that can be arbitrarily positioned in a layout.|
+
+ To assemble the layouts into `*.hde` templates, run:
 
 ```sh
-./build.php /path/to/output.hde
+./build.php /path/to/template/directory
 ```
 
 For active continuous development, run:
