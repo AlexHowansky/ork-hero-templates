@@ -29,75 +29,71 @@ The following hotkeys are supported:
 
 ## Customization
 
-Various features of this template can be configured from metadata stored in the character sheet itself. This allows for automatic customization of the resulting output, every time it is exported, without the need to subsequently edit HTML or CSS.
+Various features of this template can be configured from metadata stored in the character sheet itself. This allows for automatic customization of the resulting output, every time it is exported, without the need to subsequently edit HTML or CSS in the generated file.
 
-This is accomplished by storing a [JSON](https://www.json.org/json-en.html) block of configuration data in the `Campaign Use` field on the `Background` tab of your character file. The JSON data in this block will be extracted by the template when the page loads in the browser and the customizations will be applied to the page dynamically.
+This is accomplished by storing [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) in the `Campaign Use` field on the `Background` tab of your character file. This CSS will be extracted by the template when the page is generated and will be applied to the resulting page. Some of the customizable elements are as follows:
 
-Example:
+|CSS Selector|Target|
+|-|-|
+|`.character-name`|The large character name at the top of the page.|
+|`.nav-link`|The navigation tab buttons.|
+|`.block-title`|The title bar at the top of each table block.|\
+|`.ability-name`|Used for custom names for powers, skills, perks, and talents.|
+|`.note`|Notes for powers, skills, perks, talents, and disads.|
 
-```json
-{
-    "theme": "dark",
-    "font": {
-        "default": {
-            "name": "Montserrat",
-            "uri": "https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
-        },
-        "header": {
-            "name": "Bangers",
-            "uri": "https://fonts.googleapis.com/css2?family=Bangers&display=swap"
-        },
-        "title": {
-            "name": "Poller One",
-            "uri": "https://fonts.googleapis.com/css2?family=Poller+One&display=swap"
-        }
-    },
-    "color": {
-        "default": "blue",
-        "header": "green",
-        "title": "red"
-    }
+The most useful of these customizations is arguably the ability to import web fonts. For example, look up your desired font face on [Google Web Fonts](https://fonts.google.com/) then click `Get Font` and `Get Embed Code` and select the `@import` radio. Use the supplied `@import` code to load the font and then `font-family` to apply the name of the font to the desired CSS selector. Then paste this resulting CSS into your `Campaign Use` field. For example, to change the font of your character's name:
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+.character-name {
+    font-family: 'Rubik Glitch';
 }
 ```
 
-The following items may be customized:
+Subsequently, every export of this character will render with the indicated font for the character name. Note if you import more than one font, all the `@import` statements must be at the top of the CSS block.
 
-### Color Themes
+```css
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+.character-name {
+    font-family: 'Rubik Glitch';
+}
+.block-title {
+    font-family: 'Acme';
+}
+.nav-link {
+    font-family: 'Acme';
+}
+```
 
-|JSON key|Theme|
-|-|-|
-|`theme`|light|
-|`theme`|dark|
+ You may of course provide any additional valid CSS properties to the provided selectors. You may have to add the `!important` CSS property to some values.
 
-The following fonts may be changed:
-
-|JSON Key|Where Used|Default|
-|-|-|-|
-|`font.title.name`|The large character name at the top of the page.|Acme|
-|`font.header.name`|The header line at the top of each table block.|Acme|
-|`font.default.name`|All other text.|system-ui|
-
-The following colors may be changed:
-
-|JSON Key|Where Used|
-|-|-|
-|`color.title`|The large character name at the top of the page.|
-|`color.header`|The header line at the top of each table block.|
-|`color.default`|All other text.|
-
-For fonts, if only `name` is provided, the template will attempt to automatically acquire the required files from [Google Fonts](https://fonts.google.com). If this does not work, or a more specific configuration is desired, an explicit CSS URI may be specified.
+```css
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+.character-name {
+    color: blue;
+    font-family: 'Rubik Glitch';
+    font-size: 4rem;
+}
+.block-title {
+    color: green !important;
+    font-family: 'Acme';
+}
+.nav-link {
+    font-family: 'Acme';
+}
+```
 
 ## Development
 
-The templates make use of [Twitter Bootstrap](https://getbootstrap.com/) and [Font Awesome](fontawesome.com) (both pulled dynamically from [cdnjs](https://cdnjs.com/)), and [Google Web Fonts](https://fonts.google.com/).
+The templates make use of [Twitter Bootstrap](https://getbootstrap.com/) and [Font Awesome](fontawesome.com) (both pulled dynamically from [cdnjs](https://cdnjs.com/)).
 
-Source files are separated into chunks according to type so that content-aware IDEs can offer proper tooling.
+Source files are separated into chunks according to type so that content-aware IDEs can offer proper tooling. Some string replacement anchors have been replaced with alternatives that are valid comments in the langauge block where they're used, so that they do not break IDE tooling or syntax highlighting.
 
 |File|Contents|
 |-|-|
 |`page.html`|Common HTML page wrapper for all layouts.|
-|`page.css`|Common CSS for all layouts.|
-|`page.js`|Common JS for all layouts.|
 |`template.xml`|Common template tags for all layouts.|
 |`layouts/*.html`|Layout-specific HTML.|
 |`layouts/*.xml`|Layout-specific template tags.|
@@ -118,8 +114,8 @@ This will create one template per layout, in the `dist` subdirectory. An optiona
 For active continuous development, run:
 
 ```sh
-./watch.sh
+./watch.sh /path/to/template/directory
 ```
 
-This will start a process that monitors all the source files and autmatically runs the build process when any change is
+This will start a process that monitors all the source files and automatically runs the build process when any change is
 detected.

@@ -1,25 +1,22 @@
 <!--IFPERKS-->
-<table class="table table-sm table-borderless table-striped">
+<table id="perks-block" class="table table-sm table-borderless table-striped">
     <thead class="table-secondary">
         <tr>
-            <th colspan="2">Perks</th>
+            <th class="block-title" colspan="2">Perks</th>
         </tr>
         <tr>
-            <td class="text-end">Cost</td>
-            <td>Name</td>
+            <th class="text-end">Cost</th>
+            <th>Name</th>
         </tr>
     </thead>
     <tbody>
         <!--PERKS-->
         <tr>
             <td class="text-end"><!--PERK_COST--></td>
-            <td<!--IS_LIST_ITEM--> class="ps-3"<!--/IS_LIST_ITEM-->>
-                <!--IS_LIST_ITEM--><span class="text-secondary fw-bold">┗━</span><!--/IS_LIST_ITEM-->
-                <!--IFNAME--><span class="name"><!--NAME-->: </span><!--/IFNAME-->
+            <td class="<!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
                 <!--IS_LIST--><i class="fa-solid fa-list text-secondary" title="List"></i><!--/IS_LIST-->
-                <!--IS_LIST--><span class="fw-bold"><!--/IS_LIST-->
+                <!--IFNAME--><span class="ability-name"><!--NAME-->: </span><!--/IFNAME-->
                 <!--PERK_TEXT-->
-                <!--IS_LIST--></span><!--/IS_LIST-->
                 <!--IS_ENHANCER--><i class="fa-solid fa-microscope text-secondary" title="Enhancer"></i><!--/IS_ENHANCER-->
                 &nbsp;
                 <!--IFNOTES--><div class="note">Note: <!--PERK_NOTES--></div><!--/IFNOTES-->

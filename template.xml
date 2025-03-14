@@ -11,7 +11,3 @@
     <!--REGSTRING-->\b1/4\b<!--/REGSTRING-->
     <!--REPSTRING-->¼<!--/REPSTRING-->
 <!--/REG_REPLACE-->
-<!--REPLACE-->
-    <!--DEFSTRING-->__CONFIG_JSON__<!--/DEFSTRING-->
-    <!--REPSTRING--><!--CAMPAIGN_USE--><!--/CAMPAIGN_USE--><!--/REPSTRING-->
-<!--/REPLACE-->

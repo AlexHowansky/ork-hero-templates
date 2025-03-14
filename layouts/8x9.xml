@@ -1,6 +1,10 @@
 <!--TEMPLATE_NAME-->Ork 8x9<!--/TEMPLATE_NAME-->
 <!--TEMPLATE_DESCRIPTION-->
-A customizable template with active features, intended for live use in a modern browser.
-
-This layout is designed to fit a half-wide window on a monitor with a 16:9 aspect ratio.
+This export template generates HTML, with customizable features and active elements, intended for use directly in a browser during a virtual gaming session.<br>
+<br>
+This layout is designed to fit a half-wide window on a monitor with a 16:9 aspect ratio.<br>
+<br>
+Make sure your Background > Campaign Use box is empty or contains valid CSS.<br>
+<br>
+See <a href="https://github.com/AlexHowansky/ork-hero-templates">https://github.com/AlexHowansky/ork-hero-templates</a> for complete documentation.
 <!--/TEMPLATE_DESCRIPTION-->

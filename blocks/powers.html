@@ -1,27 +1,24 @@
 <!--IFPOWERS-->
-<table class="table table-sm table-borderless table-striped">
+<table id="powers-block" class="table table-sm table-borderless table-striped text-end">
     <thead class="table-secondary">
         <tr>
-            <th colspan="3">Powers</th>
+            <th class="block-title" colspan="3">Powers</th>
         </tr>
         <tr>
-            <td class="text-end">Cost</td>
-            <td class="text-end">End</td>
-            <td>Power</td>
+            <th>Cost</th>
+            <th>End</th>
+            <th class="text-start">Power</th>
         </tr>
     </thead>
     <tbody>
         <!--POWERS-->
         <tr>
-            <td class="text-end"><!--POWER_COST--></td>
-            <td class="text-end"><!--POWER_END--></td>
-            <td<!--IS_LIST_ITEM--> class="ps-3"<!--/IS_LIST_ITEM-->>
-                <!--IS_LIST_ITEM--><span class="text-secondary fw-bold">┗━</span><!--/IS_LIST_ITEM-->
-                <!--IFNAME--><span class="name"><!--NAME-->: </span><!--/IFNAME-->
+            <td><!--POWER_COST--></td>
+            <td><!--POWER_END--></td>
+            <td class="text-start <!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
                 <!--IS_LIST--><i class="fa-solid fa-list text-secondary" title="List"></i><!--/IS_LIST-->
-                <!--IS_LIST--><span class="fw-bold"><!--/IS_LIST-->
+                <!--IFNAME--><span class="ability-name"><!--NAME-->: </span><!--/IFNAME-->
                 <!--POWER_TEXT-->
-                <!--IS_LIST--></span><!--/IS_LIST-->
                 &nbsp;
                 <!--IFNOTES--><div class="note">Note: <!--POWER_NOTES--></div><!--/IFNOTES-->
             </td>
@@ -29,8 +26,8 @@
         <!--/POWERS-->
     </tbody>
     <tfoot class="table-secondary">
-        <th class="text-end"><!--POWER_POINTS--></th>
-        <th colspan="2">Total Power Points</th>
+        <th><!--POWER_POINTS--></th>
+        <th class="text-start" colspan="2">Total Power Points</th>
     </tfoot>
 </table>
 <!--/IFPOWERS-->
