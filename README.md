@@ -13,6 +13,16 @@ A layout defines a particular arrangement of display items. There are multiple l
 |`Ork 16x9.hde`|This layout is intended to fit a maximized window on a 16:9 monitor.|
 |`Ork 8x9.hde`|This layout is intended to fit a half-wide window on a 16:9 monitor.|
 
+### Use
+
+* Download the latest `*.hde` template files from the [repository releases page](https://github.com/AlexHowansky/ork-hero-templates/releases) and copy them to the `Custom Export Formats` subdirectory of your HERO Designer installation.
+* Launch HERO Designer amd load the desired character.
+* Select `Current Character` > `Export` > `Set Export Format...`, select the desired template, and click the `Select` button.
+* Save the character to make this choice persistent.
+* Select `Current Character` > `Export` > `Export to File...` to generate the HTML output.
+
+Note: the template uses the `Background` > `Campaign Use` field to store metadata. If you are experiencing any rendering issues, try emptying this field and re-exporting.
+
 ## Active Features
 
 The following hotkeys are supported:
