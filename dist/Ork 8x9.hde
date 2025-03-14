@@ -534,7 +534,7 @@ build a new template.
         <div class="tab-pane" id="combat_pane">
             <div class="row g-2">
                 <div class="col-5">
-                    <table class="table table-sm table-borderless table-striped">
+                    <table id="combat-info-block" class="table table-sm table-borderless table-striped">
     <thead class="table-secondary">
         <tr>
             <th class="block-title" colspan="3">Combat Info</th>
@@ -549,7 +549,7 @@ build a new template.
     </tbody>
 </table>
 
-                    <table class="table table-sm table-borderless table-striped text-center">
+                    <table id="defenses-block" class="table table-sm table-borderless table-striped text-center">
     <thead class="table-secondary">
         <tr>
             <th class="block-title" colspan="3">Defenses</th>
@@ -589,7 +589,7 @@ build a new template.
 </table>
 
                     <!--IFCOMBAT_LEVELS-->
-<table class="table table-sm table-borderless table-striped">
+<table id="combat-levels-block" class="table table-sm table-borderless table-striped">
     <thead class="table-secondary">
         <tr>
             <th class="block-title" colspan="2">Combat Skill Levels</th>
@@ -612,7 +612,7 @@ build a new template.
 
                 </div>
                 <div class="col-7">
-                    <table class="table table-sm table-borderless table-striped">
+                    <table id="range-modifiers-block" class="table table-sm table-borderless table-striped">
     <thead class="table-secondary">
         <tr>
             <th class="block-title" colspan="7">Range Modifiers</th>
@@ -641,7 +641,7 @@ build a new template.
 </table>
 
                     <!--IFMANEUVERS-->
-<table class="table table-sm table-borderless table-striped text-center">
+<table id="combat-maneauvers-block" class="table table-sm table-borderless table-striped text-center">
     <thead class="table-secondary">
         <tr>
             <th class="block-title" colspan="5">Combat Maneauvers</th>
@@ -673,7 +673,7 @@ build a new template.
         </div>
         <div class="tab-pane" id="disads_pane">
             <!--IFDISADS-->
-<table class="table table-sm table-borderless table-striped">
+<table id="disads-block" class="table table-sm table-borderless table-striped">
     <thead class="table-secondary">
         <tr>
             <th class="block-title" colspan="2">Disads</th>
@@ -709,7 +709,7 @@ build a new template.
         <div class="tab-pane" id="background_pane">
             <div class="row g-2">
                 <div class="col-8">
-                    <table class="table table-sm table-borderless table-striped">
+                    <table id="background-block" class="table table-sm table-borderless table-striped">
     <!--IF_BACKGROUND-->
     <thead class="table-secondary"><tr><th class="block-title">Background / History</th></tr></thead>
     <tbody><tr><td><!--BACKGROUND--></td></tr></tbody>
