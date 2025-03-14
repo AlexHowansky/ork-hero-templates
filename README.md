@@ -24,7 +24,7 @@ A layout defines a particular arrangement of display items. There are multiple l
 * Save the character to make this choice persistent.
 * Select `Current Character` > `Export` > `Export to File...` to generate the HTML output.
 
-Note: the template uses the `Background` > `Campaign Use` field to store metadata. If you are experiencing any rendering issues, try emptying this field and re-exporting.
+Note: The template uses the `Background` > `Campaign Use` field to store metadata. If you are experiencing any rendering issues, try emptying this field and re-exporting.
 
 ## Active Features
 
@@ -42,9 +42,9 @@ The following hotkeys are supported:
 
 ## Customization
 
-Various features of this template can be configured from metadata stored in the character sheet itself. This allows for automatic customization of the resulting output, every time it is exported, without the need to subsequently edit HTML or CSS in the generated file.
+Various features of this template can be configured from metadata stored in the character sheet itself. This allows for automatic customization of the resulting output, every time it is exported, without the need to subsequently edit the generated file.
 
-This is accomplished by storing [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) in the `Campaign Use` field on the `Background` tab of your character file. This CSS will be extracted by the template when the page is generated and will be applied to the resulting page. Some of the customizable elements are as follows:
+This is accomplished by storing [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) in the `Campaign Use` field on the `Background` tab of your character file. If you wish to make use of this feature, populate the field with only CSS, do not include any `<style>` tags or other information. This CSS will be extracted by the template when the page is generated and will be applied to the resulting HTML. Some of the customizable elements are as follows:
 
 |CSS Selector|Target|
 |-|-|
@@ -54,7 +54,7 @@ This is accomplished by storing [CSS](https://developer.mozilla.org/en-US/docs/W
 |`.ability-name`|Used for custom names for powers, skills, perks, and talents.|
 |`.note`|Notes for powers, skills, perks, talents, and disads.|
 
-The most useful of these customizations is arguably the ability to import web fonts. For example, look up your desired font face on [Google Web Fonts](https://fonts.google.com/) then click `Get Font` and `Get Embed Code` and select the `@import` radio. Use the supplied `@import` code to load the font and then `font-family` to apply the name of the font to the desired CSS selector. Then paste this resulting CSS into your `Campaign Use` field. For example, to change the font of your character's name:
+The most useful of these customizations is arguably the ability to import web fonts. For example, look up a desired font on [Google Web Fonts](https://fonts.google.com/) then click `Get Font` and `Get Embed Code` and select the `@import` radio. Use the supplied `@import` code to load the font and then `font-family` to apply the name of the font to the desired CSS selector. Then paste this resulting CSS into your `Campaign Use` field. For example, to change the font of your character's name:
 
 ```css
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
@@ -63,19 +63,19 @@ The most useful of these customizations is arguably the ability to import web fo
 }
 ```
 
-Subsequently, every export of this character will render with the indicated font for the character name. Note if you import more than one font, all the `@import` statements must be at the top of the CSS block.
+If you import more than one font, all the `@import` statements must be at the top:
 
 ```css
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
 .character-name {
     font-family: 'Rubik Glitch';
 }
 .block-title {
-    font-family: 'Acme';
+    font-family: 'Delius';
 }
 .nav-link {
-    font-family: 'Acme';
+    font-family: 'Delius';
 }
 ```
 
@@ -83,7 +83,7 @@ Subsequently, every export of this character will render with the indicated font
 
 ```css
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
 .character-name {
     color: blue;
     font-family: 'Rubik Glitch';
@@ -91,10 +91,7 @@ Subsequently, every export of this character will render with the indicated font
 }
 .block-title {
     color: green !important;
-    font-family: 'Acme';
-}
-.nav-link {
-    font-family: 'Acme';
+    font-family: 'Delius';
 }
 ```
 
