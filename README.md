@@ -1,5 +1,8 @@
 # Ork HERO Templates
 
+[<img src="media/pic1.png" width="400" title="dark mode">](media/pic1.png)
+[<img src="media/pic2.png" width="400" title="light mode">](media/pic2.png)
+
 ## Description
 
 This project contains a set of [HERO Designer](https://www.herogames.com/store/product/1-hero-designer/) character export templates with customizable features and active elements, intended for use directly in a browser during a virtual gaming session. These templates should never be used for physical printing or PDF export. The project's top priorities are to maximize use of screen real estate, minimize scrolling, and eliminate the need to have the HERO Designer application open while playing.
