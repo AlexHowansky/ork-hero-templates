@@ -54,7 +54,12 @@ This is accomplished by storing [CSS](https://developer.mozilla.org/en-US/docs/W
 |`.ability-name`|Used for custom names for powers, skills, perks, and talents.|
 |`.note`|Notes for powers, skills, perks, talents, and disads.|
 
-The most useful of these customizations is arguably the ability to import web fonts. For example, look up a desired font on [Google Web Fonts](https://fonts.google.com/) then click `Get Font` and `Get Embed Code` and select the `@import` radio. Use the supplied `@import` code to load the font and then `font-family` to apply the name of the font to the desired CSS selector. Then paste this resulting CSS into your `Campaign Use` field. For example, to change the font of your character's name:
+The most useful of these customizations is arguably the ability to import web fonts, such as those from [Google Web Fonts](https://fonts.google.com/) and [CDN Fonts](https://www.cdnfonts.com/).
+
+### Google Web Fonts
+
+
+ Look up a desired font on [Google Web Fonts](https://fonts.google.com/) then click `Get Font`, `Get Embed Code`, and then select the `@import` radio. Copy and paste the supplied `@import` CSS line (do not include the `<style>` tags) into the `Campaign Use` field and then add a `font-family` attribute to apply the name of the font to the desired CSS selector. For example, to change the font of your character's name:
 
 ```css
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
@@ -63,16 +68,28 @@ The most useful of these customizations is arguably the ability to import web fo
 }
 ```
 
+### CDN Fonts
+
+Look up a desired font on [CDN Fonts](https://www.cdnfonts.com/) then click its name to zoom to the font detail page. From there, copy the `@import` CSS line (do not include the `<style>` tags) into the `Campaign Use` field and add the `font-family` attribute as desribed above.
+
+```css
+@import url('https://fonts.cdnfonts.com/css/vampire-wars');
+.character-name {
+    font-family: 'Vampire Wars';
+}
+```
+
 If you import more than one font, all the `@import` statements must be at the top:
 
 ```css
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
 .character-name {
     font-family: 'Rubik Glitch';
 }
 .block-title {
-    font-family: 'Delius';
+    font-family: 'Acme';
 }
 .nav-link {
     font-family: 'Delius';
@@ -83,15 +100,16 @@ If you import more than one font, all the `@import` statements must be at the to
 
 ```css
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 .character-name {
     color: blue;
+    filter: drop-shadow(#404040 0.2rem 0.2rem);
     font-family: 'Rubik Glitch';
     font-size: 4rem;
 }
 .block-title {
     color: green !important;
-    font-family: 'Delius';
+    font-family: 'Acme';
 }
 ```
 
