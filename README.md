@@ -19,7 +19,7 @@ A layout defines a particular arrangement of display items. There are multiple l
 ### Use
 
 * Download the latest `*.hde` template files from the [repository releases page](https://github.com/AlexHowansky/ork-hero-templates/releases) and copy them to the `Custom Export Formats` subdirectory of your HERO Designer installation.
-* Launch HERO Designer amd load the desired character.
+* Launch HERO Designer and load the desired character.
 * Select `Current Character` > `Export` > `Set Export Format...`, select the desired template, and click the `Select` button.
 * Save the character to make this choice persistent.
 * Select `Current Character` > `Export` > `Export to File...` to generate the HTML output.
