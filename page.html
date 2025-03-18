@@ -36,7 +36,7 @@ build a new template.
                 border-bottom: 1px solid var(--bs-secondary) !important;
                 color: var(--bs-primary) !important;
                 font-family: 'Acme';
-                font-size: 125%;
+                font-size: 1.25rem;
                 font-weight: bold;
                 text-align: center;
             }
@@ -56,12 +56,12 @@ build a new template.
             }
             .nav-link {
                 font-family: 'Acme';
-                font-size: 125%;
+                font-size: 1.25rem;
                 font-weight: bold;
             }
             .note {
                 color: var(--bs-secondary);
-                font-size: 85%;
+                font-size: 0.85rem;
                 font-style: italic;
             }
         </style>
@@ -90,9 +90,6 @@ build a new template.
         <!--LAYOUT-->
         <script>
             document.addEventListener('DOMContentLoaded', function(event) {
-                // const style = document.createElement('style');
-                // style.textContent = '<!--CAMPAIGN_USE--><!--/CAMPAIGN_USE-->';
-                // document.head.appendChild(style);
                 document.addEventListener('keypress', (event) => {
                     switch (event.key) {
                         case 'c':
