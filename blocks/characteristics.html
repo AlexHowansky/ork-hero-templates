@@ -1,14 +1,14 @@
 <table id="characteristics-block" class="table table-sm table-borderless table-striped text-center">
     <thead class="table-secondary">
         <tr>
-            <th class="block-title" colspan="8">Characteristics</th>
+            <th class="block-title" colspan="7">Characteristics</th>
         </tr>
         <tr>
-            <th>Val</th>
-            <th>Char</th>
+            <th>Value</th>
+            <th>Characteristic</th>
             <th>Base</th>
-            <th colspan="2">Points</th>
-            <th>Total</th>
+            <th class="text-end">Cost</th>
+            <th>&nbsp;&nbsp;&nbsp;</th>
             <th>Roll</th>
             <th class="text-start">Notes</th>
         </tr>
@@ -16,204 +16,238 @@
     <tbody>
         <!--STR-->
         <tr>
-            <td><!--STR_VAL--></td>
+            <td>
+                <span class="primary"><!--STR_PRIMARY--></span>
+                <!--IF_SECONDARY-->/ <span class="secondary"><!--STR_SECONDARY--></span><!--/IF_SECONDARY-->
+            </td>
             <td>STR</td>
             <td><!--STR_BASE--></td>
             <td class="text-end"><!--STR_COST--></td>
-            <td>&nbsp;&nbsp;&nbsp;</td>
-            <td><!--STR_TOTAL--></td>
+            <td></td>
             <td><!--STR_ROLL--></td>
             <td class="text-start"><!--STR_NOTES--></td>
         </tr>
         <!--/STR-->
         <!--DEX-->
         <tr>
-            <td><!--DEX_VAL--></td>
+            <td>
+                <span class="primary"><!--DEX_PRIMARY--></span>
+                <!--IF_SECONDARY-->/ <span class="secondary"><!--DEX_SECONDARY--></span><!--/IF_SECONDARY-->
+            </td>
             <td>DEX</td>
             <td><!--DEX_BASE--></td>
             <td class="text-end"><!--DEX_COST--></td>
             <td></td>
-            <td><!--DEX_TOTAL--></td>
             <td><!--DEX_ROLL--></td>
             <td class="text-start"><!--DEX_NOTES--></td>
         </tr>
         <!--/DEX-->
         <!--CON-->
         <tr>
-            <td><!--CON_VAL--></td>
+            <td>
+                <span class="primary"><!--CON_PRIMARY--></span>
+                <!--IF_SECONDARY-->/ <span class="secondary"><!--CON_SECONDARY--></span><!--/IF_SECONDARY-->
+            </td>
             <td>CON</td>
             <td><!--CON_BASE--></td>
             <td class="text-end"><!--CON_COST--></td>
             <td></td>
-            <td><!--CON_TOTAL--></td>
             <td><!--CON_ROLL--></td>
             <td class="text-start"><!--CON_NOTES--></td>
         </tr>
         <!--/CON-->
         <!--BODY-->
         <tr>
-            <td><!--BODY_VAL--></td>
+            <td>
+                <span class="primary"><!--BODY_PRIMARY--></span>
+                <!--IF_SECONDARY-->/ <span class="secondary"><!--BODY_SECONDARY--></span><!--/IF_SECONDARY-->
+            </td>
             <td>BODY</td>
             <td><!--BODY_BASE--></td>
             <td class="text-end"><!--BODY_COST--></td>
             <td></td>
-            <td><!--BODY_TOTAL--></td>
             <td><!--BODY_ROLL--></td>
             <td class="text-start"><!--BODY_NOTES--></td>
         </tr>
         <!--/BODY-->
         <!--INT-->
         <tr>
-            <td><!--INT_VAL--></td>
+            <td>
+                <span class="primary"><!--INT_PRIMARY--></span>
+                <!--IF_SECONDARY-->/ <span class="secondary"><!--INT_SECONDARY--></span><!--/IF_SECONDARY-->
+            </td>
             <td>INT</td>
             <td><!--INT_BASE--></td>
             <td class="text-end"><!--INT_COST--></td>
             <td></td>
-            <td><!--INT_TOTAL--></td>
             <td><!--INT_ROLL--></td>
             <td class="text-start"><!--INT_NOTES--></td>
         </tr>
         <!--/INT-->
         <!--EGO-->
         <tr>
-            <td><!--EGO_VAL--></td>
+            <td>
+                <span class="primary"><!--EGO_PRIMARY--></span>
+                <!--IF_SECONDARY-->/ <span class="secondary"><!--EGO_SECONDARY--></span><!--/IF_SECONDARY-->
+            </td>
             <td>EGO</td>
             <td><!--EGO_BASE--></td>
             <td class="text-end"><!--EGO_COST--></td>
             <td></td>
-            <td><!--EGO_TOTAL--></td>
             <td><!--EGO_ROLL--></td>
             <td class="text-start"><!--EGO_NOTES--></td>
         </tr>
         <!--/EGO-->
         <!--PRE-->
         <tr>
-            <td><!--PRE_VAL--></td>
+            <td>
+                <span class="primary"><!--PRE_PRIMARY--></span>
+                <!--IF_SECONDARY-->/ <span class="secondary"><!--PRE_SECONDARY--></span><!--/IF_SECONDARY-->
+            </td>
             <td>PRE</td>
             <td><!--PRE_BASE--></td>
             <td class="text-end"><!--PRE_COST--></td>
             <td></td>
-            <td><!--PRE_TOTAL--></td>
             <td><!--PRE_ROLL--></td>
             <td class="text-start"><!--PRE_NOTES--></td>
         </tr>
         <!--/PRE-->
         <!--COM-->
         <tr>
-            <td><!--COM_VAL--></td>
+            <td>
+                <span class="primary"><!--COM_PRIMARY--></span>
+                <!--IF_SECONDARY-->/ <span class="secondary"><!--COM_SECONDARY--></span><!--/IF_SECONDARY-->
+            </td>
             <td>COM</td>
             <td><!--COM_BASE--></td>
             <td class="text-end"><!--COM_COST--></td>
             <td></td>
-            <td><!--COM_TOTAL--></td>
             <td><!--COM_ROLL--></td>
             <td class="text-start"><!--COM_NOTES--></td>
         </tr>
         <!--/COM-->
         <!--PD-->
         <tr>
-            <td><!--PD_VAL--></td>
+            <td>
+                <span class="primary"><!--PD_PRIMARY--></span>
+                <!--IF_SECONDARY-->/ <span class="secondary"><!--PD_SECONDARY--></span><!--/IF_SECONDARY-->
+            </td>
             <td>PD</td>
             <td><!--PD_BASE--></td>
             <td class="text-end"><!--PD_COST--></td>
             <td></td>
-            <td><!--PD_TOTAL--></td>
             <td></td>
             <td class="text-start"><!--PD_NOTES--></td>
         </tr>
         <!--/PD-->
         <!--ED-->
         <tr>
-            <td><!--ED_VAL--></td>
+            <td>
+                <span class="primary"><!--ED_PRIMARY--></span>
+                <!--IF_SECONDARY-->/ <span class="secondary"><!--ED_SECONDARY--></span><!--/IF_SECONDARY-->
+            </td>
             <td>ED</td>
             <td><!--ED_BASE--></td>
             <td class="text-end"><!--ED_COST--></td>
             <td></td>
-            <td><!--ED_TOTAL--></td>
             <td></td>
             <td class="text-start"><!--ED_NOTES--></td>
         </tr>
         <!--/ED-->
         <!--SPD-->
         <tr>
-            <td><!--SPD_VAL--></td>
+            <td>
+                <span class="primary"><!--SPD_PRIMARY--></span>
+                <!--IF_SECONDARY-->/ <span class="secondary"><!--SPD_SECONDARY--></span><!--/IF_SECONDARY-->
+            </td>
             <td>SPD</td>
             <td><!--SPD_BASE--></td>
             <td class="text-end"><!--SPD_COST--></td>
             <td></td>
-            <td><!--SPD_TOTAL--></td>
             <td></td>
             <td class="text-start"><!--SPD_NOTES--></td>
         </tr>
         <!--/SPD-->
         <!--REC-->
         <tr>
-            <td><!--REC_VAL--></td>
+            <td>
+                <span class="primary"><!--REC_PRIMARY--></span>
+                <!--IF_SECONDARY-->/ <span class="secondary"><!--REC_SECONDARY--></span><!--/IF_SECONDARY-->
+            </td>
             <td>REC</td>
             <td><!--REC_BASE--></td>
             <td class="text-end"><!--REC_COST--></td>
             <td></td>
-            <td><!--REC_TOTAL--></td>
             <td></td>
             <td class="text-start"><!--REC_NOTES--></td>
         </tr>
         <!--/REC-->
         <!--END-->
         <tr>
-            <td><!--END_VAL--></td>
+            <td>
+                <span class="primary"><!--END_PRIMARY--></span>
+                <!--IF_SECONDARY-->/ <span class="secondary"><!--END_SECONDARY--></span><!--/IF_SECONDARY-->
+            </td>
             <td>END</td>
             <td><!--END_BASE--></td>
             <td class="text-end"><!--END_COST--></td>
             <td></td>
-            <td><!--END_TOTAL--></td>
             <td></td>
             <td class="text-start"><!--END_NOTES--></td>
         </tr>
         <!--/END-->
         <!--STUN-->
         <tr>
-            <td><!--STUN_VAL--></td>
+            <td>
+                <span class="primary"><!--STUN_PRIMARY--></span>
+                <!--IF_SECONDARY-->/ <span class="secondary"><!--STUN_SECONDARY--></span><!--/IF_SECONDARY-->
+            </td>
             <td>STUN</td>
             <td><!--STUN_BASE--></td>
             <td class="text-end"><!--STUN_COST--></td>
             <td></td>
-            <td><!--STUN_TOTAL--></td>
             <td></td>
             <td class="text-start"></td>
         </tr>
         <!--/STUN-->
         <!--RUNNING-->
         <tr>
-            <td><!--RUNNING_VAL--></td>
+            <td>
+                <span class="primary"><!--RUNNING_PRIMARY--></span>
+                <!--IF_SECONDARY-->/ <span class="secondary"><!--RUNNING_SECONDARY--></span><!--/IF_SECONDARY-->
+            </td>
             <td>Running</td>
             <td><!--RUNNING_BASE--></td>
             <td class="text-end"><!--RUNNING_COST--></td>
             <td></td>
-            <td><!--RUNNING_TOTAL--></td>
             <td></td>
             <td class="text-start"><!--RUNNING_NOTES--></td>
         </tr>
         <!--/RUNNING-->
         <!--SWIMMING-->
         <tr>
-            <td><!--SWIMMING_VAL--></td>
+            <td>
+                <span class="primary"><!--SWIMMING_PRIMARY--></span>
+                <!--IF_SECONDARY-->/ <span class="secondary"><!--SWIMMING_SECONDARY--></span><!--/IF_SECONDARY-->
+            </td>
             <td>Swimming</td>
             <td><!--SWIMMING_BASE--></td>
             <td class="text-end"><!--SWIMMING_COST--></td>
             <td></td>
-            <td><!--SWIMMING_TOTAL--></td>
             <td></td>
             <td class="text-start"><!--SWIMMING_NOTES--></td>
         </tr>
         <!--/SWIMMING-->
         <!--LEAPING-->
         <tr>
-            <td><!--LEAPING_VAL--></td>
+            <td>
+                <span class="primary"><!--LEAPING_PRIMARY--></span>
+                <!--IF_SECONDARY-->/ <span class="secondary"><!--LEAPING_SECONDARY--></span><!--/IF_SECONDARY-->
+            </td>
             <td>Leaping</td>
             <td><!--LEAPING_BASE--></td>
             <td class="text-end"><!--LEAPING_COST--></td>
             <td></td>
-            <td><!--LEAPING_TOTAL--></td>
             <td></td>
             <td class="text-start"><!--LEAPING_NOTES--></td>
         </tr>
@@ -225,7 +259,7 @@
             <td></td>
             <td></td>
             <th class="text-end"><!--CHARACTERISTIC_POINTS--></th>
-            <th class="text-start" colspan="4">Total Characteristic Points</th>
+            <th class="text-start" colspan="3">Total Characteristic Points</th>
         </tr>
     </tfoot>
 </table>

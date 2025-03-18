@@ -9,6 +9,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Changed
 
 - Portrait images are now directly embedded in the HTML. The export process still writes a separate image file, but it is not needed.
+- The Characteristics block now shows both primary and secondary values. The `Total` column has been shifted left and renamed `Value`. The previous `Value` column has been removed, it was useless.
 
 ## [0.3.0] - 2025-03-16
 
