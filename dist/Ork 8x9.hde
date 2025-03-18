@@ -71,6 +71,11 @@ build a new template.
                 color: var(--bs-info) !important;
                 font-weight: bold;
             }
+            .list::before {
+                color: var(--bs-secondary);
+                content: '\f0ca';
+                font-family: 'Font Awesome 6 Free';
+            }
             .list-item::before {
                 color: var(--bs-secondary) !important;
                 content: '┗━';
@@ -445,7 +450,6 @@ build a new template.
         <tr>
             <td class="text-center roll"><!--SKILL_ROLL--></td>
             <td class="<!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
-                <!--IS_LIST--><i class="fa-solid fa-list text-secondary" title="List"></i><!--/IS_LIST-->
                 <!--IFNAME--><span class="ability-name"><!--NAME-->: </span><!--/IFNAME-->
                 <!--SKILL_TEXT_NO_ROLL-->
                 <!--IS_ENHANCER--><i class="fa-solid fa-microscope text-secondary" title="Enhancer"></i><!--/IS_ENHANCER-->
@@ -482,7 +486,6 @@ build a new template.
         <!--PERKS-->
         <tr>
             <td class="<!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
-                <!--IS_LIST--><i class="fa-solid fa-list text-secondary" title="List"></i><!--/IS_LIST-->
                 <!--IFNAME--><span class="ability-name"><!--NAME-->: </span><!--/IFNAME-->
                 <!--PERK_TEXT-->
                 <!--IS_ENHANCER--><i class="fa-solid fa-microscope text-secondary" title="Enhancer"></i><!--/IS_ENHANCER-->
@@ -517,7 +520,6 @@ build a new template.
         <!--TALENTS-->
         <tr>
             <td class="<!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
-                <!--IS_LIST--><i class="fa-solid fa-list text-secondary" title="List"></i><!--/IS_LIST-->
                 <!--IFNAME--><span class="ability-name"><!--NAME-->: </span><!--/IFNAME-->
                 <!--TALENT_TEXT-->
                 &nbsp;
@@ -557,7 +559,6 @@ build a new template.
         <tr>
             <td><!--POWER_END--></td>
             <td class="text-start <!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
-                <!--IS_LIST--><i class="fa-solid fa-list text-secondary" title="List"></i><!--/IS_LIST-->
                 <!--IFNAME--><span class="ability-name"><!--NAME-->: </span><!--/IFNAME-->
                 <!--POWER_TEXT-->
                 &nbsp;
@@ -829,7 +830,6 @@ build a new template.
         <!--DISADS-->
         <tr>
             <td class="<!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
-                <!--IS_LIST--><i class="fa-solid fa-list text-secondary" title="List"></i><!--/IS_LIST-->
                 <!--DISAD_TEXT-->
                 &nbsp;
                 <!--IFNOTES--><div class="note">Note: <!--DISAD_NOTES--></div><!--/IFNOTES-->
