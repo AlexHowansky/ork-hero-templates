@@ -53,6 +53,8 @@ This is accomplished by storing [CSS](https://developer.mozilla.org/en-US/docs/W
 |`.block-title`|The title bar at the top of each table block.|\
 |`.ability-name`|Used for custom names for powers, skills, perks, and talents.|
 |`.note`|Notes for powers, skills, perks, talents, and disads.|
+|`.list`|List header items.|
+|`.list-item`|List member items.|
 
 The most useful of these customizations is arguably the ability to import web fonts, such as those from [Google Web Fonts](https://fonts.google.com/) and [CDN Fonts](https://www.cdnfonts.com/).
 
