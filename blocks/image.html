@@ -9,10 +9,19 @@
         <!--IMAGE-->
         <tr>
             <td class="text-center p-0">
-                <img src="<!--IMAGE_RELATIVE_URL-->" class="img-fluid" alt="<!--CHARACTER_NAME-->">
+                <img id="portrait-image" class="img-fluid" alt="<!--CHARACTER_NAME-->">
             </td>
         </tr>
         <!--/IMAGE-->
     </tbody>
 </table>
+<script>
+document.addEventListener('DOMContentLoaded', function(event) {
+    const imageHex = '<!--IMAGE_HEX_DATA-->';
+    const imageName = '<!--IMAGE_RELATIVE_URL-->';
+    document.getElementById('portrait-image').src =
+        'data:image/' + imageName.split('.').pop() + ';base64,' + btoa([...imageHex].reduce((acc, _, i) =>
+            acc += !(i - 1 & 1) ? String.fromCharCode(parseInt(imageHex.substring(i - 1, i + 1), 16)) : '', ''));
+});
+</script>
 <!--/IF_IMAGE-->
