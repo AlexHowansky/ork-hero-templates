@@ -86,9 +86,10 @@ build a new template.
                 color: var(--bs-secondary);
                 font-size: 0.85rem;
                 font-style: italic;
+                padding-left: 1rem;
             }
-            .primary {
-                color: var(--bs-success);
+            .primary, .roll {
+                color: var(--bs-success) !important;
                 font-weight: bold;
             }
             .secondary {
@@ -153,10 +154,10 @@ build a new template.
             <th>Value</th>
             <th>Characteristic</th>
             <th>Base</th>
-            <th class="text-end">Cost</th>
             <th>&nbsp;&nbsp;&nbsp;</th>
             <th>Roll</th>
             <th class="text-start">Notes</th>
+            <th class="text-end">Cost</th>
         </tr>
     </thead>
     <tbody>
@@ -168,10 +169,10 @@ build a new template.
             </td>
             <td>STR</td>
             <td><!--STR_BASE--></td>
-            <td class="text-end"><!--STR_COST--></td>
             <td></td>
-            <td><!--STR_ROLL--></td>
+            <td class="roll"><!--STR_ROLL--></td>
             <td class="text-start"><!--STR_NOTES--></td>
+            <td class="text-end"><!--STR_COST--></td>
         </tr>
         <!--/STR-->
         <!--DEX-->
@@ -182,10 +183,10 @@ build a new template.
             </td>
             <td>DEX</td>
             <td><!--DEX_BASE--></td>
-            <td class="text-end"><!--DEX_COST--></td>
             <td></td>
-            <td><!--DEX_ROLL--></td>
+            <td class="roll"><!--DEX_ROLL--></td>
             <td class="text-start"><!--DEX_NOTES--></td>
+            <td class="text-end"><!--DEX_COST--></td>
         </tr>
         <!--/DEX-->
         <!--CON-->
@@ -196,10 +197,10 @@ build a new template.
             </td>
             <td>CON</td>
             <td><!--CON_BASE--></td>
-            <td class="text-end"><!--CON_COST--></td>
             <td></td>
-            <td><!--CON_ROLL--></td>
+            <td class="roll"><!--CON_ROLL--></td>
             <td class="text-start"><!--CON_NOTES--></td>
+            <td class="text-end"><!--CON_COST--></td>
         </tr>
         <!--/CON-->
         <!--BODY-->
@@ -210,10 +211,10 @@ build a new template.
             </td>
             <td>BODY</td>
             <td><!--BODY_BASE--></td>
-            <td class="text-end"><!--BODY_COST--></td>
             <td></td>
-            <td><!--BODY_ROLL--></td>
+            <td class="roll"><!--BODY_ROLL--></td>
             <td class="text-start"><!--BODY_NOTES--></td>
+            <td class="text-end"><!--BODY_COST--></td>
         </tr>
         <!--/BODY-->
         <!--INT-->
@@ -224,10 +225,10 @@ build a new template.
             </td>
             <td>INT</td>
             <td><!--INT_BASE--></td>
-            <td class="text-end"><!--INT_COST--></td>
             <td></td>
-            <td><!--INT_ROLL--></td>
+            <td class="roll"><!--INT_ROLL--></td>
             <td class="text-start"><!--INT_NOTES--></td>
+            <td class="text-end"><!--INT_COST--></td>
         </tr>
         <!--/INT-->
         <!--EGO-->
@@ -238,10 +239,10 @@ build a new template.
             </td>
             <td>EGO</td>
             <td><!--EGO_BASE--></td>
-            <td class="text-end"><!--EGO_COST--></td>
             <td></td>
-            <td><!--EGO_ROLL--></td>
+            <td class="roll"><!--EGO_ROLL--></td>
             <td class="text-start"><!--EGO_NOTES--></td>
+            <td class="text-end"><!--EGO_COST--></td>
         </tr>
         <!--/EGO-->
         <!--PRE-->
@@ -252,10 +253,10 @@ build a new template.
             </td>
             <td>PRE</td>
             <td><!--PRE_BASE--></td>
-            <td class="text-end"><!--PRE_COST--></td>
             <td></td>
-            <td><!--PRE_ROLL--></td>
+            <td class="roll"><!--PRE_ROLL--></td>
             <td class="text-start"><!--PRE_NOTES--></td>
+            <td class="text-end"><!--PRE_COST--></td>
         </tr>
         <!--/PRE-->
         <!--COM-->
@@ -266,10 +267,10 @@ build a new template.
             </td>
             <td>COM</td>
             <td><!--COM_BASE--></td>
-            <td class="text-end"><!--COM_COST--></td>
             <td></td>
-            <td><!--COM_ROLL--></td>
+            <td class="roll"><!--COM_ROLL--></td>
             <td class="text-start"><!--COM_NOTES--></td>
+            <td class="text-end"><!--COM_COST--></td>
         </tr>
         <!--/COM-->
         <!--PD-->
@@ -280,10 +281,10 @@ build a new template.
             </td>
             <td>PD</td>
             <td><!--PD_BASE--></td>
-            <td class="text-end"><!--PD_COST--></td>
             <td></td>
             <td></td>
             <td class="text-start"><!--PD_NOTES--></td>
+            <td class="text-end"><!--PD_COST--></td>
         </tr>
         <!--/PD-->
         <!--ED-->
@@ -294,10 +295,10 @@ build a new template.
             </td>
             <td>ED</td>
             <td><!--ED_BASE--></td>
-            <td class="text-end"><!--ED_COST--></td>
             <td></td>
             <td></td>
             <td class="text-start"><!--ED_NOTES--></td>
+            <td class="text-end"><!--ED_COST--></td>
         </tr>
         <!--/ED-->
         <!--SPD-->
@@ -308,10 +309,10 @@ build a new template.
             </td>
             <td>SPD</td>
             <td><!--SPD_BASE--></td>
-            <td class="text-end"><!--SPD_COST--></td>
             <td></td>
             <td></td>
             <td class="text-start"><!--SPD_NOTES--></td>
+            <td class="text-end"><!--SPD_COST--></td>
         </tr>
         <!--/SPD-->
         <!--REC-->
@@ -322,10 +323,10 @@ build a new template.
             </td>
             <td>REC</td>
             <td><!--REC_BASE--></td>
-            <td class="text-end"><!--REC_COST--></td>
             <td></td>
             <td></td>
             <td class="text-start"><!--REC_NOTES--></td>
+            <td class="text-end"><!--REC_COST--></td>
         </tr>
         <!--/REC-->
         <!--END-->
@@ -336,10 +337,10 @@ build a new template.
             </td>
             <td>END</td>
             <td><!--END_BASE--></td>
-            <td class="text-end"><!--END_COST--></td>
             <td></td>
             <td></td>
             <td class="text-start"><!--END_NOTES--></td>
+            <td class="text-end"><!--END_COST--></td>
         </tr>
         <!--/END-->
         <!--STUN-->
@@ -350,10 +351,10 @@ build a new template.
             </td>
             <td>STUN</td>
             <td><!--STUN_BASE--></td>
-            <td class="text-end"><!--STUN_COST--></td>
             <td></td>
             <td></td>
             <td class="text-start"></td>
+            <td class="text-end"><!--STUN_COST--></td>
         </tr>
         <!--/STUN-->
         <!--RUNNING-->
@@ -364,10 +365,10 @@ build a new template.
             </td>
             <td>Running</td>
             <td><!--RUNNING_BASE--></td>
-            <td class="text-end"><!--RUNNING_COST--></td>
             <td></td>
             <td></td>
             <td class="text-start"><!--RUNNING_NOTES--></td>
+            <td class="text-end"><!--RUNNING_COST--></td>
         </tr>
         <!--/RUNNING-->
         <!--SWIMMING-->
@@ -378,10 +379,10 @@ build a new template.
             </td>
             <td>Swimming</td>
             <td><!--SWIMMING_BASE--></td>
-            <td class="text-end"><!--SWIMMING_COST--></td>
             <td></td>
             <td></td>
             <td class="text-start"><!--SWIMMING_NOTES--></td>
+            <td class="text-end"><!--SWIMMING_COST--></td>
         </tr>
         <!--/SWIMMING-->
         <!--LEAPING-->
@@ -392,20 +393,17 @@ build a new template.
             </td>
             <td>Leaping</td>
             <td><!--LEAPING_BASE--></td>
-            <td class="text-end"><!--LEAPING_COST--></td>
             <td></td>
             <td></td>
             <td class="text-start"><!--LEAPING_NOTES--></td>
+            <td class="text-end"><!--LEAPING_COST--></td>
         </tr>
         <!--/LEAPING-->
     </tbody>
     <tfoot class="table-secondary">
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+            <th class="text-end" colspan="6">Total Characteristic Points</th>
             <th class="text-end"><!--CHARACTERISTIC_POINTS--></th>
-            <th class="text-start" colspan="3">Total Characteristic Points</th>
         </tr>
     </tfoot>
 </table>
@@ -416,32 +414,34 @@ build a new template.
 <table id="skills-block" class="table table-sm table-borderless table-striped">
     <thead class="table-secondary">
         <tr>
-            <th class="block-title" colspan="2">Skills</th>
+            <th class="block-title" colspan="3">Skills</th>
         </tr>
         <tr>
+            <th class="text-center">Roll</th>
+            <th>Description</th>
             <th class="text-end">Cost</th>
-            <th>Name</th>
         </tr>
     </thead>
     <tbody>
         <!--SKILLS-->
         <tr>
-            <td class="text-end"><!--SKILL_COST--></td>
+            <td class="text-center roll"><!--SKILL_ROLL--></td>
             <td class="<!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
                 <!--IS_LIST--><i class="fa-solid fa-list text-secondary" title="List"></i><!--/IS_LIST-->
                 <!--IFNAME--><span class="ability-name"><!--NAME-->: </span><!--/IFNAME-->
-                <!--SKILL_TEXT-->
+                <!--SKILL_TEXT_NO_ROLL-->
                 <!--IS_ENHANCER--><i class="fa-solid fa-microscope text-secondary" title="Enhancer"></i><!--/IS_ENHANCER-->
                 &nbsp;
                 <!--IFNOTES--><div class="note">Note: <!--SKILL_NOTES--></div><!--/IFNOTES-->
             </td>
+            <td class="text-end"><!--SKILL_COST--></td>
         </tr>
         <!--/SKILLS-->
     </tbody>
     <tfoot class="table-secondary">
         <tr>
+            <th colspan="2" class="text-end">Total Skill Points</th>
             <th class="text-end"><!--SKILL_POINTS--></th>
-            <th>Total Skill Points</th>
         </tr>
     </tfoot>
 </table>
@@ -456,14 +456,13 @@ build a new template.
             <th class="block-title" colspan="2">Perks</th>
         </tr>
         <tr>
+            <th>Description</th>
             <th class="text-end">Cost</th>
-            <th>Name</th>
         </tr>
     </thead>
     <tbody>
         <!--PERKS-->
         <tr>
-            <td class="text-end"><!--PERK_COST--></td>
             <td class="<!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
                 <!--IS_LIST--><i class="fa-solid fa-list text-secondary" title="List"></i><!--/IS_LIST-->
                 <!--IFNAME--><span class="ability-name"><!--NAME-->: </span><!--/IFNAME-->
@@ -472,13 +471,14 @@ build a new template.
                 &nbsp;
                 <!--IFNOTES--><div class="note">Note: <!--PERK_NOTES--></div><!--/IFNOTES-->
             </td>
+            <td class="text-end"><!--PERK_COST--></td>
         </tr>
         <!--/PERKS-->
     </tbody>
     <tfoot class="table-secondary">
         <tr>
+            <th class="text-end">Total Perk Points</th>
             <th class="text-end"><!--PERK_POINTS--></th>
-            <th>Total Perk Points</th>
         </tr>
     </tfoot>
 </table>
@@ -491,14 +491,13 @@ build a new template.
             <th class="block-title" colspan="2">Talents</th>
         </tr>
         <tr>
+            <th>Description</th>
             <th class="text-end">Cost</th>
-            <th>Name</th>
         </tr>
     </thead>
     <tbody>
         <!--TALENTS-->
         <tr>
-            <td class="text-end"><!--TALENT_COST--></td>
             <td class="<!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
                 <!--IS_LIST--><i class="fa-solid fa-list text-secondary" title="List"></i><!--/IS_LIST-->
                 <!--IFNAME--><span class="ability-name"><!--NAME-->: </span><!--/IFNAME-->
@@ -506,13 +505,14 @@ build a new template.
                 &nbsp;
                 <!--IFNOTES--><div class="note">Note: <!--TALENT_NOTES--></div><!--/IFNOTES-->
             </td>
+            <td class="text-end"><!--TALENT_COST--></td>
         </tr>
         <!--/TALENTS-->
     </tbody>
     <tfoot class="table-secondary">
         <tr>
+            <th class="text-end">Total Talent Points</th>
             <th class="text-end"><!--TALENT_POINTS--></th>
-            <th>Total Talent Points</th>
         </tr>
     </tfoot>
 </table>
@@ -763,15 +763,14 @@ build a new template.
             <th class="block-title" colspan="3">Powers</th>
         </tr>
         <tr>
-            <th>Cost</th>
             <th>End</th>
             <th class="text-start">Power</th>
+            <th>Cost</th>
         </tr>
     </thead>
     <tbody>
         <!--POWERS-->
         <tr>
-            <td><!--POWER_COST--></td>
             <td><!--POWER_END--></td>
             <td class="text-start <!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
                 <!--IS_LIST--><i class="fa-solid fa-list text-secondary" title="List"></i><!--/IS_LIST-->
@@ -780,12 +779,13 @@ build a new template.
                 &nbsp;
                 <!--IFNOTES--><div class="note">Note: <!--POWER_NOTES--></div><!--/IFNOTES-->
             </td>
+            <td><!--POWER_COST--></td>
         </tr>
         <!--/POWERS-->
     </tbody>
     <tfoot class="table-secondary">
+        <th colspan="2">Total Power Points</th>
         <th><!--POWER_POINTS--></th>
-        <th class="text-start" colspan="2">Total Power Points</th>
     </tfoot>
 </table>
 <!--/IFPOWERS-->
@@ -799,27 +799,27 @@ build a new template.
             <th class="block-title" colspan="2">Disads</th>
         </tr>
         <tr>
-            <th class="text-end">Cost</th>
             <th>Name</th>
+            <th class="text-end">Cost</th>
         </tr>
     </thead>
     <tbody>
         <!--DISADS-->
         <tr>
-            <td class="text-end"><!--DISAD_COST--></td>
             <td class="<!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
                 <!--IS_LIST--><i class="fa-solid fa-list text-secondary" title="List"></i><!--/IS_LIST-->
                 <!--DISAD_TEXT-->
                 &nbsp;
                 <!--IFNOTES--><div class="note">Note: <!--DISAD_NOTES--></div><!--/IFNOTES-->
             </td>
+            <td class="text-end"><!--DISAD_COST--></td>
         </tr>
         <!--/DISADS-->
     </tbody>
     <tfoot class="table-secondary">
         <tr>
-            <th class="text-end"><!--DISAD_POINTS--></th>
             <th>Total Disad Points</th>
+            <th class="text-end"><!--DISAD_POINTS--></th>
         </tr>
     </tfoot>
 </table>

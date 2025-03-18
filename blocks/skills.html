@@ -2,32 +2,34 @@
 <table id="skills-block" class="table table-sm table-borderless table-striped">
     <thead class="table-secondary">
         <tr>
-            <th class="block-title" colspan="2">Skills</th>
+            <th class="block-title" colspan="3">Skills</th>
         </tr>
         <tr>
+            <th class="text-center">Roll</th>
+            <th>Description</th>
             <th class="text-end">Cost</th>
-            <th>Name</th>
         </tr>
     </thead>
     <tbody>
         <!--SKILLS-->
         <tr>
-            <td class="text-end"><!--SKILL_COST--></td>
+            <td class="text-center roll"><!--SKILL_ROLL--></td>
             <td class="<!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
                 <!--IS_LIST--><i class="fa-solid fa-list text-secondary" title="List"></i><!--/IS_LIST-->
                 <!--IFNAME--><span class="ability-name"><!--NAME-->: </span><!--/IFNAME-->
-                <!--SKILL_TEXT-->
+                <!--SKILL_TEXT_NO_ROLL-->
                 <!--IS_ENHANCER--><i class="fa-solid fa-microscope text-secondary" title="Enhancer"></i><!--/IS_ENHANCER-->
                 &nbsp;
                 <!--IFNOTES--><div class="note">Note: <!--SKILL_NOTES--></div><!--/IFNOTES-->
             </td>
+            <td class="text-end"><!--SKILL_COST--></td>
         </tr>
         <!--/SKILLS-->
     </tbody>
     <tfoot class="table-secondary">
         <tr>
+            <th colspan="2" class="text-end">Total Skill Points</th>
             <th class="text-end"><!--SKILL_POINTS--></th>
-            <th>Total Skill Points</th>
         </tr>
     </tfoot>
 </table>
