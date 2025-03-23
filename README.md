@@ -1,7 +1,7 @@
 # Ork HERO Templates
 
-[<img src="media/pic1.png" width="400" title="dark mode">](media/pic1.png)
-[<img src="media/pic2.png" width="400" title="light mode">](media/pic2.png)
+[<img src="media/light.png" width="400" title="light mode">](media/light.png)
+[<img src="media/dark.png" width="400" title="dark mode">](media/dark.png)
 
 ## Description
 
