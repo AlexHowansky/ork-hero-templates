@@ -1,27 +1,33 @@
 <!--IFMANEUVERS-->
-<table id="combat-maneauvers-block" class="table table-sm table-borderless table-striped text-center">
-    <thead class="table-secondary">
-        <tr>
-            <th class="block-title" colspan="5">Combat Maneauvers</th>
-        </tr>
-        <tr>
-            <th class="text-start">Maneuver</th>
-            <th>Phase</th>
-            <th>OCV</th>
-            <th>DCV</th>
-            <th class="text-start">Effect</th>
-        </tr>
-    </thead>
-    <tbody>
-        <!--MANEUVERS-->
-        <tr>
-            <td class="text-start"><!--MANEUVER_NAME--></td>
-            <td><!--MANEUVER_PHASE--></td>
-            <td><!--MANEUVER_OCV--></td>
-            <td><!--MANEUVER_DCV--></td>
-            <td class="text-start"><!--MANEUVER_EFFECT--></td>
-        </tr>
-        <!--/MANEUVERS-->
-    </tbody>
-</table>
+<div class="block" id="combat-maneauvers-block">
+    <div class="block-title" data-bs-toggle="collapse" data-bs-target="#combat-maneauvers-collapse">
+        Combat Maneauvers
+        <i class="collapse-expand fa-solid fa-caret-down"></i>
+        <i class="collapse-shrink fa-solid fa-caret-up"></i>
+    </div>
+    <div id="combat-maneauvers-collapse" class="collapse show">
+        <table class="table table-sm table-borderless table-striped text-center">
+            <thead class="table-secondary">
+                <tr>
+                    <th class="text-start">Maneuver</th>
+                    <th>Phase</th>
+                    <th>OCV</th>
+                    <th>DCV</th>
+                    <th class="text-start">Effect</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--MANEUVERS-->
+                <tr>
+                    <td class="text-start"><!--MANEUVER_NAME--></td>
+                    <td><!--MANEUVER_PHASE--></td>
+                    <td><!--MANEUVER_OCV--></td>
+                    <td><!--MANEUVER_DCV--></td>
+                    <td class="text-start"><!--MANEUVER_EFFECT--></td>
+                </tr>
+                <!--/MANEUVERS-->
+            </tbody>
+        </table>
+    </div>
+</div>
 <!--/IFMANEUVERS-->

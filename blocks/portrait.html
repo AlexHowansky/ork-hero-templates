@@ -1,20 +1,24 @@
 <!--IF_IMAGE-->
-<table id="portrait-block" class="table table-sm table-borderless table-striped">
-    <thead class="table-secondary">
-        <tr>
-            <th class="block-title">Portrait</th>
-        </tr>
-    </thead>
-    <tbody>
-        <!--IMAGE-->
-        <tr>
-            <td class="text-center p-0">
-                <img id="portrait-image" class="img-fluid" alt="<!--CHARACTER_NAME-->">
-            </td>
-        </tr>
-        <!--/IMAGE-->
-    </tbody>
-</table>
+<div class="block" id="portrait-block">
+    <div class="block-title" data-bs-toggle="collapse" data-bs-target="#portrait-collapse">
+        Portrait
+        <i class="collapse-expand fa-solid fa-caret-down"></i>
+        <i class="collapse-shrink fa-solid fa-caret-up"></i>
+    </div>
+    <div id="portrait-collapse" class="collapse show">
+        <table class="table table-sm table-borderless table-striped">
+            <tbody>
+                <!--IMAGE-->
+                <tr>
+                    <td class="text-center p-0">
+                        <img id="portrait-image" class="img-fluid" alt="<!--CHARACTER_NAME-->">
+                    </td>
+                </tr>
+                <!--/IMAGE-->
+            </tbody>
+        </table>
+    </div>
+</div>
 <script>
 document.addEventListener('DOMContentLoaded', function(event) {
     const imageHex = '<!--IMAGE_HEX_DATA-->';

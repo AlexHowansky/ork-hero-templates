@@ -1,21 +1,25 @@
 <!--IFCOMBAT_LEVELS-->
-<table id="combat-levels-block" class="table table-sm table-borderless table-striped">
-    <thead class="table-secondary">
-        <tr>
-            <th class="block-title" colspan="2">Combat Skill Levels</th>
-        </tr>
-    </thead>
-    <tbody>
-        <!--COMBAT_LEVELS-->
-        <tr>
-            <td>
-                <!--IFNAME--><span class="ability-name"><!--NAME-->: </span><!--/IFNAME-->
-                <!--COMBAT_LEVEL_TEXT-->
-                &nbsp;
-                <!--IFNOTES--><div class="note">Note: <!--COMBAT_LEVEL_NOTES--></div><!--/IFNOTES-->
-            </td>
-        </tr>
-        <!--/COMBAT_LEVELS-->
-    </tbody>
-</table>
+<div class="block" id="combat-levels-block">
+    <div class="block-title" data-bs-toggle="collapse" data-bs-target="#combat-levels-collapse">
+        Combat Skill Levels
+        <i class="collapse-expand fa-solid fa-caret-down"></i>
+        <i class="collapse-shrink fa-solid fa-caret-up"></i>
+    </div>
+    <div id="combat-levels-collapse" class="collapse show">
+        <table class="table table-sm table-borderless table-striped">
+            <tbody>
+                <!--COMBAT_LEVELS-->
+                <tr>
+                    <td>
+                        <!--IFNAME--><span class="ability-name"><!--NAME-->: </span><!--/IFNAME-->
+                        <!--COMBAT_LEVEL_TEXT-->
+                        &nbsp;
+                        <!--IFNOTES--><div class="note">Note: <!--COMBAT_LEVEL_NOTES--></div><!--/IFNOTES-->
+                    </td>
+                </tr>
+                <!--/COMBAT_LEVELS-->
+            </tbody>
+        </table>
+    </div>
+</div>
 <!--/IFCOMBAT_LEVELS-->

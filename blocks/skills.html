@@ -1,35 +1,41 @@
 <!--IFSKILLS-->
-<table id="skills-block" class="table table-sm table-borderless table-striped">
-    <thead class="table-secondary">
-        <tr>
-            <th class="block-title" colspan="3">Skills</th>
-        </tr>
-        <tr>
-            <th class="text-center">Roll</th>
-            <th>Description</th>
-            <th class="text-end">Cost</th>
-        </tr>
-    </thead>
-    <tbody>
-        <!--SKILLS-->
-        <tr>
-            <td class="text-center roll"><!--SKILL_ROLL--></td>
-            <td class="<!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
-                <!--IFNAME--><span class="ability-name"><!--NAME-->: </span><!--/IFNAME-->
-                <!--SKILL_TEXT_NO_ROLL-->
-                <!--IS_ENHANCER--><i class="fa-solid fa-microscope text-secondary" title="Enhancer"></i><!--/IS_ENHANCER-->
-                &nbsp;
-                <!--IFNOTES--><div class="note">Note: <!--SKILL_NOTES--></div><!--/IFNOTES-->
-            </td>
-            <td class="text-end"><!--SKILL_COST--></td>
-        </tr>
-        <!--/SKILLS-->
-    </tbody>
-    <tfoot class="table-secondary">
-        <tr>
-            <th colspan="2" class="text-end">Total Skill Points</th>
-            <th class="text-end"><!--SKILL_POINTS--></th>
-        </tr>
-    </tfoot>
-</table>
+<div class="block" id="skills-block">
+    <div class="block-title" data-bs-toggle="collapse" data-bs-target="#skills-collapse">
+        Skills
+        <i class="collapse-expand fa-solid fa-caret-down"></i>
+        <i class="collapse-shrink fa-solid fa-caret-up"></i>
+    </div>
+    <div id="skills-collapse" class="collapse show">
+        <table class="table table-sm table-borderless table-striped">
+            <thead class="table-secondary">
+                <tr>
+                    <th class="text-center">Roll</th>
+                    <th>Description</th>
+                    <th class="text-end">Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--SKILLS-->
+                <tr>
+                    <td class="text-center roll"><!--SKILL_ROLL--></td>
+                    <td class="<!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
+                        <!--IFNAME--><span class="ability-name"><!--NAME-->: </span><!--/IFNAME-->
+                        <!--SKILL_TEXT_NO_ROLL-->
+                        <!--IS_ENHANCER--><i class="fa-solid fa-microscope text-secondary" title="Enhancer"></i><!--/IS_ENHANCER-->
+                        &nbsp;
+                        <!--IFNOTES--><div class="note">Note: <!--SKILL_NOTES--></div><!--/IFNOTES-->
+                    </td>
+                    <td class="text-end"><!--SKILL_COST--></td>
+                </tr>
+                <!--/SKILLS-->
+            </tbody>
+            <tfoot class="table-secondary">
+                <tr>
+                    <th colspan="2" class="text-end">Total Skill Points</th>
+                    <th class="text-end"><!--SKILL_POINTS--></th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
 <!--/IFSKILLS-->

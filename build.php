@@ -6,7 +6,7 @@ foreach (glob('layouts/*.html') as $layoutHtml) {
     $layoutName = sprintf('Ork %s', ucfirst(basename($layoutHtml, '.html')));
     $output = file_get_contents($layoutXml) . file_get_contents('template.xml') . file_get_contents('page.html');
     $output = str_replace('<!--LAYOUT-->', file_get_contents($layoutHtml), $output);
-    $output = str_replace('/*__CSS__*/', '<!--CAMPAIGN_USE--><!--/CAMPAIGN_USE-->', $output);
+    $output = str_replace('/*CSS*/', '<!--CAMPAIGN_USE--><!--/CAMPAIGN_USE-->', $output);
     $blocks = glob('blocks/*.html');
     $output = str_replace(
         array_map(fn(string $file): string => sprintf('<!--%s_BLOCK-->', strtoupper(basename($file, '.html'))), $blocks),

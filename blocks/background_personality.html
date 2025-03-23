@@ -1,6 +1,14 @@
 <!--IF_PERSONALITY-->
-<table id="background-block" class="table table-sm table-borderless table-striped">
-    <thead class="table-secondary"><tr><th class="block-title">Personality / Motivation</th></tr></thead>
-    <tbody><tr><td><!--PERSONALITY--></td></tr></tbody>
-</table>
+<div class="block" id="background-personality-block">
+    <div class="block-title" data-bs-toggle="collapse" data-bs-target="#background-personality-collapse">
+        Personality / Motivation
+        <i class="collapse-expand fa-solid fa-caret-down"></i>
+        <i class="collapse-shrink fa-solid fa-caret-up"></i>
+    </div>
+    <div id="background-personality-collapse" class="collapse show">
+        <table class="table table-sm table-borderless table-striped">
+            <tbody><tr><td><!--PERSONALITY--></td></tr></tbody>
+        </table>
+    </div>
+</div>
 <!--/IF_PERSONALITY-->

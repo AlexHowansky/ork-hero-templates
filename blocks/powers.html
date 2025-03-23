@@ -1,32 +1,38 @@
 <!--IFPOWERS-->
-<table id="powers-block" class="table table-sm table-borderless table-striped text-end">
-    <thead class="table-secondary">
-        <tr>
-            <th class="block-title" colspan="3">Powers</th>
-        </tr>
-        <tr>
-            <th>End</th>
-            <th class="text-start">Power</th>
-            <th>Cost</th>
-        </tr>
-    </thead>
-    <tbody>
-        <!--POWERS-->
-        <tr>
-            <td><!--POWER_END--></td>
-            <td class="text-start <!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
-                <!--IFNAME--><span class="ability-name"><!--NAME-->: </span><!--/IFNAME-->
-                <!--POWER_TEXT-->
-                &nbsp;
-                <!--IFNOTES--><div class="note">Note: <!--POWER_NOTES--></div><!--/IFNOTES-->
-            </td>
-            <td><!--POWER_COST--></td>
-        </tr>
-        <!--/POWERS-->
-    </tbody>
-    <tfoot class="table-secondary">
-        <th colspan="2">Total Power Points</th>
-        <th><!--POWER_POINTS--></th>
-    </tfoot>
-</table>
+<div class="block" id="powers-block">
+    <div class="block-title" data-bs-toggle="collapse" data-bs-target="#powers-collapse">
+        Powers
+        <i class="collapse-expand fa-solid fa-caret-down"></i>
+        <i class="collapse-shrink fa-solid fa-caret-up"></i>
+    </div>
+    <div id="powers-collapse" class="collapse show">
+        <table class="table table-sm table-borderless table-striped text-end">
+            <thead class="table-secondary">
+                <tr>
+                    <th>End</th>
+                    <th class="text-start">Power</th>
+                    <th>Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--POWERS-->
+                <tr>
+                    <td><!--POWER_END--></td>
+                    <td class="text-start <!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
+                        <!--IFNAME--><span class="ability-name"><!--NAME-->: </span><!--/IFNAME-->
+                        <!--POWER_TEXT-->
+                        &nbsp;
+                        <!--IFNOTES--><div class="note">Note: <!--POWER_NOTES--></div><!--/IFNOTES-->
+                    </td>
+                    <td><!--POWER_COST--></td>
+                </tr>
+                <!--/POWERS-->
+            </tbody>
+            <tfoot class="table-secondary">
+                <th colspan="2">Total Power Points</th>
+                <th><!--POWER_POINTS--></th>
+            </tfoot>
+        </table>
+    </div>
+</div>
 <!--/IFPOWERS-->

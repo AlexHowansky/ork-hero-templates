@@ -1,31 +1,37 @@
 <!--IFDISADS-->
-<table id="disads-block" class="table table-sm table-borderless table-striped">
-    <thead class="table-secondary">
-        <tr>
-            <th class="block-title" colspan="2">Disads</th>
-        </tr>
-        <tr>
-            <th>Name</th>
-            <th class="text-end">Cost</th>
-        </tr>
-    </thead>
-    <tbody>
-        <!--DISADS-->
-        <tr>
-            <td class="<!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
-                <!--DISAD_TEXT-->
-                &nbsp;
-                <!--IFNOTES--><div class="note">Note: <!--DISAD_NOTES--></div><!--/IFNOTES-->
-            </td>
-            <td class="text-end"><!--DISAD_COST--></td>
-        </tr>
-        <!--/DISADS-->
-    </tbody>
-    <tfoot class="table-secondary">
-        <tr>
-            <th class="text-end">Total Disad Points</th>
-            <th class="text-end"><!--DISAD_POINTS--></th>
-        </tr>
-    </tfoot>
-</table>
+<div class="block" id="disads-block">
+    <div class="block-title" data-bs-toggle="collapse" data-bs-target="#disads-collapse">
+        Disads
+        <i class="collapse-expand fa-solid fa-caret-down"></i>
+        <i class="collapse-shrink fa-solid fa-caret-up"></i>
+    </div>
+    <div id="disads-collapse" class="collapse show">
+        <table class="table table-sm table-borderless table-striped">
+            <thead class="table-secondary">
+                <tr>
+                    <th>Name</th>
+                    <th class="text-end">Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--DISADS-->
+                <tr>
+                    <td class="<!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
+                        <!--DISAD_TEXT-->
+                        &nbsp;
+                        <!--IFNOTES--><div class="note">Note: <!--DISAD_NOTES--></div><!--/IFNOTES-->
+                    </td>
+                    <td class="text-end"><!--DISAD_COST--></td>
+                </tr>
+                <!--/DISADS-->
+            </tbody>
+            <tfoot class="table-secondary">
+                <tr>
+                    <th class="text-end">Total Disad Points</th>
+                    <th class="text-end"><!--DISAD_POINTS--></th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
 <!--/IFDISADS-->

@@ -1,6 +1,14 @@
 <!--IF_BACKGROUND-->
-<table id="background-block" class="table table-sm table-borderless table-striped">
-    <thead class="table-secondary"><tr><th class="block-title">Background / History</th></tr></thead>
-    <tbody><tr><td><!--BACKGROUND--></td></tr></tbody>
-</table>
+<div class="block" id="background-block">
+    <div class="block-title" data-bs-toggle="collapse" data-bs-target="#background-collapse">
+        Background / History
+        <i class="collapse-expand fa-solid fa-caret-down"></i>
+        <i class="collapse-shrink fa-solid fa-caret-up"></i>
+    </div>
+    <div id="background-collapse" class="collapse show">
+        <table class="table table-sm table-borderless table-striped">
+            <tbody><tr><td><!--BACKGROUND--></td></tr></tbody>
+        </table>
+    </div>
+</div>
 <!--/IF_BACKGROUND-->

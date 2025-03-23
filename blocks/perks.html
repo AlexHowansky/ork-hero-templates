@@ -1,33 +1,39 @@
 <!--IFPERKS-->
-<table id="perks-block" class="table table-sm table-borderless table-striped">
-    <thead class="table-secondary">
-        <tr>
-            <th class="block-title" colspan="2">Perks</th>
-        </tr>
-        <tr>
-            <th>Description</th>
-            <th class="text-end">Cost</th>
-        </tr>
-    </thead>
-    <tbody>
-        <!--PERKS-->
-        <tr>
-            <td class="<!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
-                <!--IFNAME--><span class="ability-name"><!--NAME-->: </span><!--/IFNAME-->
-                <!--PERK_TEXT-->
-                <!--IS_ENHANCER--><i class="fa-solid fa-microscope text-secondary" title="Enhancer"></i><!--/IS_ENHANCER-->
-                &nbsp;
-                <!--IFNOTES--><div class="note">Note: <!--PERK_NOTES--></div><!--/IFNOTES-->
-            </td>
-            <td class="text-end"><!--PERK_COST--></td>
-        </tr>
-        <!--/PERKS-->
-    </tbody>
-    <tfoot class="table-secondary">
-        <tr>
-            <th class="text-end">Total Perk Points</th>
-            <th class="text-end"><!--PERK_POINTS--></th>
-        </tr>
-    </tfoot>
-</table>
+<div class="block" id="perks-block">
+    <div class="block-title" data-bs-toggle="collapse" data-bs-target="#perks-collapse">
+        Perks
+        <i class="collapse-expand fa-solid fa-caret-down"></i>
+        <i class="collapse-shrink fa-solid fa-caret-up"></i>
+    </div>
+    <div id="perks-collapse" class="collapse show">
+        <table class="table table-sm table-borderless table-striped">
+            <thead class="table-secondary">
+                <tr>
+                    <th>Description</th>
+                    <th class="text-end">Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--PERKS-->
+                <tr>
+                    <td class="<!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
+                        <!--IFNAME--><span class="ability-name"><!--NAME-->: </span><!--/IFNAME-->
+                        <!--PERK_TEXT-->
+                        <!--IS_ENHANCER--><i class="fa-solid fa-microscope text-secondary" title="Enhancer"></i><!--/IS_ENHANCER-->
+                        &nbsp;
+                        <!--IFNOTES--><div class="note">Note: <!--PERK_NOTES--></div><!--/IFNOTES-->
+                    </td>
+                    <td class="text-end"><!--PERK_COST--></td>
+                </tr>
+                <!--/PERKS-->
+            </tbody>
+            <tfoot class="table-secondary">
+                <tr>
+                    <th class="text-end">Total Perk Points</th>
+                    <th class="text-end"><!--PERK_POINTS--></th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
 <!--/IFPERKS-->

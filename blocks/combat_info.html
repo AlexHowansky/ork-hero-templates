@@ -1,14 +1,18 @@
-<table id="combat-info-block" class="table table-sm table-borderless table-striped">
-    <thead class="table-secondary">
-        <tr>
-            <th class="block-title" colspan="3">Combat Info</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>OCV <!--OCV--></td>
-            <td class="text-center">DCV <!--DCV--></td>
-            <td class="text-end">ECV <!--ECV--></td>
-        </tr>
-    </tbody>
-</table>
+<div class="block" id="combat-info-block">
+    <div class="block-title" data-bs-toggle="collapse" data-bs-target="#combat-info-collapse">
+        Combat Info
+        <i class="collapse-expand fa-solid fa-caret-down"></i>
+        <i class="collapse-shrink fa-solid fa-caret-up"></i>
+    </div>
+    <div id="combat-info-collapse" class="collapse show">
+        <table class="table table-sm table-borderless table-striped">
+            <tbody>
+                <tr>
+                    <td>OCV <!--OCV--></td>
+                    <td class="text-center">DCV <!--DCV--></td>
+                    <td class="text-end">ECV <!--ECV--></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

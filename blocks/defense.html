@@ -1,38 +1,44 @@
-<table id="defenses-block" class="table table-sm table-borderless table-striped text-center">
-    <thead class="table-secondary">
-        <tr>
-            <th class="block-title" colspan="3">Defenses</th>
-        </tr>
-        <tr>
-            <th class="text-start">Type</th>
-            <th>Total</th>
-            <th>Resistant</th>
-        </tr>
-    </thead>
-    <tbody>
-        <!--PD-->
-        <tr>
-            <td class="text-start">PD</td>
-            <td><!--PD_NONRESISTANT_TOTAL--></td>
-            <td><!--PD_RESISTANT_TOTAL--></td>
-        </tr>
-        <!--/PD-->
-        <!--ED-->
-        <tr>
-            <td class="text-start">ED</td>
-            <td><!--ED_NONRESISTANT_TOTAL--></td>
-            <td><!--ED_RESISTANT_TOTAL--></td>
-        </tr>
-        <!--/ED-->
-        <tr>
-            <td class="text-start">Mental</td>
-            <td><!--MENTAL_DEFENSE_TOTAL--></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td class="text-start">Power</td>
-            <td><!--POWER_DEFENSE_TOTAL--></td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
+<div class="block" id="defenses-block">
+    <div class="block-title" data-bs-toggle="collapse" data-bs-target="#defenses-collapse">
+        Defenses
+        <i class="collapse-expand fa-solid fa-caret-down"></i>
+        <i class="collapse-shrink fa-solid fa-caret-up"></i>
+    </div>
+    <div id="defenses-collapse" class="collapse show">
+        <table class="table table-sm table-borderless table-striped text-center">
+            <thead class="table-secondary">
+                <tr>
+                    <th class="text-start">Type</th>
+                    <th>Total</th>
+                    <th>Resistant</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--PD-->
+                <tr>
+                    <td class="text-start">PD</td>
+                    <td><!--PD_NONRESISTANT_TOTAL--></td>
+                    <td><!--PD_RESISTANT_TOTAL--></td>
+                </tr>
+                <!--/PD-->
+                <!--ED-->
+                <tr>
+                    <td class="text-start">ED</td>
+                    <td><!--ED_NONRESISTANT_TOTAL--></td>
+                    <td><!--ED_RESISTANT_TOTAL--></td>
+                </tr>
+                <!--/ED-->
+                <tr>
+                    <td class="text-start">Mental</td>
+                    <td><!--MENTAL_DEFENSE_TOTAL--></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="text-start">Power</td>
+                    <td><!--POWER_DEFENSE_TOTAL--></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

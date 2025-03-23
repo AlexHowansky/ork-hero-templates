@@ -1,32 +1,38 @@
 <!--IFTALENTS-->
-<table id="talents-block" class="table table-sm table-borderless table-striped">
-    <thead class="table-secondary">
-        <tr>
-            <th class="block-title" colspan="2">Talents</th>
-        </tr>
-        <tr>
-            <th>Description</th>
-            <th class="text-end">Cost</th>
-        </tr>
-    </thead>
-    <tbody>
-        <!--TALENTS-->
-        <tr>
-            <td class="<!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
-                <!--IFNAME--><span class="ability-name"><!--NAME-->: </span><!--/IFNAME-->
-                <!--TALENT_TEXT-->
-                &nbsp;
-                <!--IFNOTES--><div class="note">Note: <!--TALENT_NOTES--></div><!--/IFNOTES-->
-            </td>
-            <td class="text-end"><!--TALENT_COST--></td>
-        </tr>
-        <!--/TALENTS-->
-    </tbody>
-    <tfoot class="table-secondary">
-        <tr>
-            <th class="text-end">Total Talent Points</th>
-            <th class="text-end"><!--TALENT_POINTS--></th>
-        </tr>
-    </tfoot>
-</table>
+<div class="block" id="talents-block">
+    <div class="block-title" data-bs-toggle="collapse" data-bs-target="#talents-collapse">
+        Talents
+        <i class="collapse-expand fa-solid fa-caret-down"></i>
+        <i class="collapse-shrink fa-solid fa-caret-up"></i>
+    </div>
+    <div id="talents-collapse" class="collapse show">
+        <table class="table table-sm table-borderless table-striped">
+            <thead class="table-secondary">
+                <tr>
+                    <th>Description</th>
+                    <th class="text-end">Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--TALENTS-->
+                <tr>
+                    <td class="<!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
+                        <!--IFNAME--><span class="ability-name"><!--NAME-->: </span><!--/IFNAME-->
+                        <!--TALENT_TEXT-->
+                        &nbsp;
+                        <!--IFNOTES--><div class="note">Note: <!--TALENT_NOTES--></div><!--/IFNOTES-->
+                    </td>
+                    <td class="text-end"><!--TALENT_COST--></td>
+                </tr>
+                <!--/TALENTS-->
+            </tbody>
+            <tfoot class="table-secondary">
+                <tr>
+                    <th class="text-end">Total Talent Points</th>
+                    <th class="text-end"><!--TALENT_POINTS--></th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
 <!--/IFTALENTS-->
