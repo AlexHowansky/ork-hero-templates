@@ -16,6 +16,7 @@ you should clone the repository and follow the instructions in the README to
 build a new template.
 
 -->
+<!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
     <head>
         <meta charset="utf-8">
@@ -24,7 +25,7 @@ build a new template.
         <title><!--CHARACTER_NAME--></title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
             .ability-name {
@@ -66,6 +67,10 @@ build a new template.
             .character-name {
                 font-size: 3rem;
                 line-height: 1.2;
+            }
+            [data-bs-toggle='tooltip'] {
+                color: var(--bs-primary);
+                cursor: help;
             }
             .list {
                 color: var(--bs-info) !important;
@@ -109,6 +114,13 @@ build a new template.
             .table {
                 margin: 0;
             }
+            .tooltip {
+                --bs-tooltip-color: var(--bs-light);
+                --bs-tooltip-bg: var(--bs-dark);
+                --bs-tooltip-font-size: var(--bs-body-font-size);
+                --bs-tooltip-max-width: 400px;
+                --bs-tooltip-opacity: 1;
+            }
         </style>
         <style>/*CSS*/</style>
     </head>
@@ -133,8 +145,34 @@ build a new template.
             </div>
         </div>
         <!--LAYOUT-->
+        <div class="modal" id="die-roller-modal" taxindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-light">
+                        <h5 class="modal-title" id="die-roller-modal-title"></h5>
+                    </div>
+                    <div class="modal-body">
+                        <dl>
+                            <dt>Target</dt>
+                            <dd id="die-roller-modal-target"></dd>
+                            <dt>Roll</dt>
+                            <dd id="die-roller-modal-roll"></dd>
+                            <dt>Result</dt>
+                            <dd id="die-roller-modal-result"></dd>
+                        </dl>
+                    </div>
+                    <div class="modal-footer bg-light">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script>
             document.addEventListener('DOMContentLoaded', function(event) {
+                // Initialize tooltips.
+                const tooltipList = [...document.querySelectorAll('[data-bs-toggle="tooltip"]')].map(element => new bootstrap.Tooltip(element));
+
+                // Initialize keyboard shortcuts.
                 document.addEventListener('keypress', (event) => {
                     switch (event.key) {
                         case 'c':
