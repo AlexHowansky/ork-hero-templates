@@ -28,6 +28,10 @@ A layout defines a particular arrangement of display items. There are multiple l
 
 Ork HERO Templates use JavaScript to render active features in real time.
 
+### Embedded Portrait
+
+If a portrait image is provided, it will be embedded directly in the HTML file. There is no need to save the portrait image file separately alongside the HTML file. (Note that HERO Designer will still export the portrait image as a separate file. It is not needed.)
+
 ### Light and Dark Mode
 
 Both light and dark modes are available on the same sheet. Press `t` to toggle between them.
