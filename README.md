@@ -2,6 +2,16 @@
 
 This project contains a set of [HERO Designer](https://www.herogames.com/store/product/1-hero-designer/) character export templates with customizable features and active elements, intended for use directly in a browser during a virtual gaming session. These templates should never be used for physical printing or PDF export. The project's top priorities are to maximize use of screen real estate, minimize scrolling, and eliminate the need to have the HERO Designer application open while playing.
 
+## Features
+
+- [Active Tabs](#tabs) - content is always above the fold
+- [Embedded Portrait](#embedded-portrait) - no separate image file required
+- [Light and Dark Mode](#light-and-dark-mode) - both on the same sheet
+- [Integrated Die Roller](#integrated-die-roller) - for most 3d6 rolls
+- [Collapsible Blocks](#collapsible-blocks) - hide the panels you don't need
+- [Hotkeys](#hotkeys) - keyboard shortcuts for common items
+- [Embedded CSS Customization](#embedded-css-customization) - CSS can be stored in the `*.hdc` file and automatically applied on each export
+
 ## Layouts
 
 A layout defines a particular arrangement of display items. There are multiple layouts available, each provided as a separate template file. The informational content of each layout is identical, only the positioning of elements differs.
@@ -28,28 +38,36 @@ A layout defines a particular arrangement of display items. There are multiple l
 
 Ork HERO Templates use JavaScript to render active features in real time.
 
+### Tabs
+
+Content is presented on multiple tabs. All data is intended to be visible without scrolling.
+
+![tabs](media/tabs.png)
+
 ### Embedded Portrait
 
 If a portrait image is provided, it will be embedded directly in the HTML file. There is no need to save the portrait image file separately alongside the HTML file. (Note that HERO Designer will still export the portrait image as a separate file. It is not needed.)
+
+![embedded portrait](media/portrait.png)
 
 ### Light and Dark Mode
 
 Both light and dark modes are available on the same sheet. Press `t` to toggle between them.
 
-[<img src="media/light.png" width="400" title="light mode">](media/light.png)
-[<img src="media/dark.png" width="400" title="dark mode">](media/dark.png)
+![light mode](media/light.png)
+![dark mode](media/dark.png)
 
 ### Integrated Die Roller
 
 An integrated die roller is available for many 3d6 rolls. Click on the target value in the Roll column to launch the roller.
 
-[<img src="media/die_roller.png" width="400" title="integrated die roller">](media/die_roller.png)
+![integrated die roller](media/die_roller.png)
 
-### Collapsible
+### Collapsible Blocks
 
 All blocks are collapsible, and may have their state toggled between open and closed by clicking on the block's title bar.
 
-[<img src="media/collapsible.png" width="400" title="collapsible blocks">](media/collapsible.png)
+![collapsible blocks](media/collapsible.png)
 
 ### Hotkeys
 
@@ -65,7 +83,7 @@ The following hotkeys are supported:
 |d|Navigate to the Disads tab.|
 |b|Navigate to the Background tab.|
 
-## Customization
+### Embedded CSS Customization
 
 Various features of this template can be configured from metadata stored in the character sheet itself. This allows for automatic customization of the resulting output, every time it is exported, without the need to subsequently edit the generated file.
 
@@ -85,7 +103,7 @@ This is accomplished by storing [CSS](https://developer.mozilla.org/en-US/docs/W
 
 The most useful of these customizations is arguably the ability to import web fonts, such as those from [Google Web Fonts](https://fonts.google.com/) and [CDN Fonts](https://www.cdnfonts.com/).
 
-### Google Web Fonts
+#### Google Web Fonts
 
 Look up a desired font on [Google Web Fonts](https://fonts.google.com/) then click `Get Font`, `Get Embed Code`, and select the `@import` radio. Copy and paste the supplied `@import` CSS line (do not include the `<style>` tags) into the `Campaign Use` field and then add a `font-family` attribute to apply the name of the font to the desired CSS selector. For example, to change the font of your character's name:
 
@@ -96,7 +114,7 @@ Look up a desired font on [Google Web Fonts](https://fonts.google.com/) then cli
 }
 ```
 
-### CDN Fonts
+#### CDN Fonts
 
 Look up a desired font on [CDN Fonts](https://www.cdnfonts.com/) then click its name to zoom to the font detail page. From there, copy the `@import` CSS line (do not include the `<style>` tags) into the `Campaign Use` field and add the `font-family` attribute as desribed above.
 
