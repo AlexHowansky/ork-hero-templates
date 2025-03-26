@@ -3,7 +3,6 @@
 
 foreach (glob('layouts/*.html') as $layoutHtml) {
     $layoutXml = preg_replace('/\.html$/', '.xml', $layoutHtml);
-    $layoutName = sprintf('Ork %s', ucfirst(basename($layoutHtml, '.html')));
     $output =
         preg_replace(['/^\s+/m', '/\n/'], '', file_get_contents($layoutXml) . file_get_contents('template.xml')) .
         file_get_contents('page.html');
@@ -15,6 +14,10 @@ foreach (glob('layouts/*.html') as $layoutHtml) {
         array_map(fn(string $file): string => file_get_contents($file), $blocks),
         $output
     );
-    $outputFile = sprintf('%s/%s.hde', rtrim($argv[1] ?? './dist' ?: './dist', '/'), $layoutName);
+    $outputFile = sprintf(
+        '%s/Ork-%s.hde',
+        rtrim($argv[1] ?? './dist' ?: './dist', '/'),
+        ucfirst(basename($layoutHtml, '.html'))
+    );
     printf("Wrote %d bytes to %s\n", file_put_contents($outputFile, $output), $outputFile);
 }

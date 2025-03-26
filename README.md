@@ -1,32 +1,53 @@
 # Ork HERO Templates
 
-[<img src="media/light.png" width="400" title="light mode">](media/light.png)
-[<img src="media/dark.png" width="400" title="dark mode">](media/dark.png)
-
-## Description
-
 This project contains a set of [HERO Designer](https://www.herogames.com/store/product/1-hero-designer/) character export templates with customizable features and active elements, intended for use directly in a browser during a virtual gaming session. These templates should never be used for physical printing or PDF export. The project's top priorities are to maximize use of screen real estate, minimize scrolling, and eliminate the need to have the HERO Designer application open while playing.
 
-### Layouts
+## Layouts
 
 A layout defines a particular arrangement of display items. There are multiple layouts available, each provided as a separate template file. The informational content of each layout is identical, only the positioning of elements differs.
 
 |File|Description|
 |-|-|
-|`Ork 16x9.hde`|This layout is intended to fit a maximized window on a 16:9 monitor.|
-|`Ork 8x9.hde`|This layout is intended to fit a half-wide window on a 16:9 monitor.|
+|`Ork-16x9.hde`|This layout is designed to fit a maximized window on a 16:9 monitor. It crams as much information onto the screen as possible. It is most useful when you have multiple monitors.|
+|`Ork-8x9.hde`|This layout is designed to fit a half-wide window on a 16:9 monitor. It is most useful when splitting multiple windows on one monitor.|
 
-### Use
+## Use
 
-* Download the latest `*.hde` template files from the [repository releases page](https://github.com/AlexHowansky/ork-hero-templates/releases) and copy them to the `Custom Export Formats` subdirectory of your HERO Designer installation.
+* Download the latest `*.hde` template files from the [repository releases page](https://github.com/AlexHowansky/ork-hero-templates/releases) and copy them to your HERO Designer installation directory.
 * Launch HERO Designer and load the desired character.
 * Select `Current Character` > `Export` > `Set Export Format...`, select the desired template, and click the `Select` button.
 * Save the character to make this choice persistent.
 * Select `Current Character` > `Export` > `Export to File...` to generate the HTML output.
 
-Note: The template uses the `Background` > `Campaign Use` field to store metadata. If you are experiencing any rendering issues, try emptying this field and re-exporting.
+### Caveats
+
+* The templates use the `Background` > `Campaign Use` field to store metadata. If you are experiencing any rendering issues, try emptying this field and re-exporting.
+* HERO Designer does not escape any output. Avoid using any HTML special characters like quotes, ampersands, and less-than signs in your descriptions, names, and notes.
 
 ## Active Features
+
+Ork HERO Templates use JavaScript to render active features in real time.
+
+### Light and Dark Mode
+
+Both light and dark modes are available on the same sheet. Press `t` to toggle between them.
+
+[<img src="media/light.png" width="400" title="light mode">](media/light.png)
+[<img src="media/dark.png" width="400" title="dark mode">](media/dark.png)
+
+### Integrated Die Roller
+
+An integrated die roller is available for many 3d6 rolls. Click on the target value in the Roll column to launch the roller.
+
+[<img src="media/die_roller.png" width="400" title="integrated die roller">](media/die_roller.png)
+
+### Collapsible
+
+All blocks are collapsible, and may have their state toggled between open and closed by clicking on the block's title bar.
+
+[<img src="media/collapsible.png" width="400" title="collapsible blocks">](media/collapsible.png)
+
+### Hotkeys
 
 The following hotkeys are supported:
 
@@ -62,8 +83,7 @@ The most useful of these customizations is arguably the ability to import web fo
 
 ### Google Web Fonts
 
-
- Look up a desired font on [Google Web Fonts](https://fonts.google.com/) then click `Get Font`, `Get Embed Code`, and then select the `@import` radio. Copy and paste the supplied `@import` CSS line (do not include the `<style>` tags) into the `Campaign Use` field and then add a `font-family` attribute to apply the name of the font to the desired CSS selector. For example, to change the font of your character's name:
+Look up a desired font on [Google Web Fonts](https://fonts.google.com/) then click `Get Font`, `Get Embed Code`, and select the `@import` radio. Copy and paste the supplied `@import` CSS line (do not include the `<style>` tags) into the `Campaign Use` field and then add a `font-family` attribute to apply the name of the font to the desired CSS selector. For example, to change the font of your character's name:
 
 ```css
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
@@ -119,7 +139,7 @@ If you import more than one font, all the `@import` statements must be at the to
 
 ## Development
 
-The templates make use of [Twitter Bootstrap](https://getbootstrap.com/) and [Font Awesome](fontawesome.com) (both pulled dynamically from [cdnjs](https://cdnjs.com/)).
+The templates make use of [Twitter Bootstrap](https://getbootstrap.com/), [Font Awesome](fontawesome.com), and [Chart.js](https://www.chartjs.org/). All resources are loaded dynamically from CDNs.
 
 Source files are separated into chunks according to type so that content-aware IDEs can offer proper tooling. Some string replacement anchors have been replaced with alternatives that are valid comments in the langauge block where they're used, so that they do not break IDE tooling or syntax highlighting.
 

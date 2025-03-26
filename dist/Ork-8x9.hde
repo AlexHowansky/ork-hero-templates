@@ -777,13 +777,13 @@ build a new template.
                 </div>
                 <div class="col-7">
                     <!--IFMANEUVERS-->
-<div class="block" id="martial-maneauvers-block">
-    <div class="block-title" data-bs-toggle="collapse" data-bs-target="#martial-maneauvers-collapse">
-        Martial Maneauvers
+<div class="block" id="martial-maneuvers-block">
+    <div class="block-title" data-bs-toggle="collapse" data-bs-target="#martial-maneuvers-collapse">
+        Martial Maneuvers
         <i class="collapse-expand fa-solid fa-caret-down"></i>
         <i class="collapse-shrink fa-solid fa-caret-up"></i>
     </div>
-    <div id="martial-maneauvers-collapse" class="collapse show">
+    <div id="martial-maneuvers-collapse" class="collapse show">
         <table class="table table-sm table-borderless table-striped text-center">
             <thead class="table-secondary">
                 <tr>
@@ -810,13 +810,13 @@ build a new template.
 </div>
 <!--/IFMANEUVERS-->
 
-                    <div class="block" id="standard-maneauvers-block">
-    <div class="block-title" data-bs-toggle="collapse" data-bs-target="#standard-maneauvers-collapse">
-        Standard Maneauvers
+                    <div class="block" id="standard-maneuvers-block">
+    <div class="block-title" data-bs-toggle="collapse" data-bs-target="#standard-maneuvers-collapse">
+        Standard Maneuvers
         <i class="collapse-expand fa-solid fa-caret-down"></i>
         <i class="collapse-shrink fa-solid fa-caret-up"></i>
     </div>
-    <div id="standard-maneauvers-collapse" class="collapse show">
+    <div id="standard-maneuvers-collapse" class="collapse show">
         <table class="table table-sm table-borderless table-striped text-center">
             <thead class="table-secondary">
                 <tr>
