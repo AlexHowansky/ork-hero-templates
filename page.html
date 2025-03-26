@@ -26,6 +26,7 @@ build a new template.
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8" integrity="sha512-IMvjDnJzMKoQZLPYQHxR4g8nm0sSd9bR7Kl5ayxnPHV8ChqVpHCdBYXGib3ZftuDlfaceqn7t47fObseBCEEJw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
             .ability-name {
@@ -72,6 +73,18 @@ build a new template.
                 color: var(--bs-primary);
                 cursor: help;
             }
+            #die-roller-modal-result[data-result='failure']::before {
+                color: var(--bs-danger);
+                content: '\f165';
+                font-family: 'Font Awesome 6 Free';
+                padding-right: 0.5rem;
+            }
+            #die-roller-modal-result[data-result='success']::before {
+                color: var(--bs-primary);
+                content: '\f164';
+                font-family: 'Font Awesome 6 Free';
+                padding-right: 0.5rem;
+            }
             .list {
                 color: var(--bs-info) !important;
                 font-weight: bold;
@@ -106,6 +119,9 @@ build a new template.
             .primary, .roll {
                 color: var(--bs-success) !important;
                 font-weight: bold;
+            }
+            .roll {
+                cursor: pointer;
             }
             .secondary {
                 color: var(--bs-danger);
@@ -153,53 +169,124 @@ build a new template.
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header bg-light">
-                        <h5 class="modal-title" id="die-roller-modal-title"></h5>
+                        <h5 class="modal-title text-dark" id="die-roller-modal-title"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
-                        <dl>
-                            <dt>Target</dt>
-                            <dd id="die-roller-modal-target"></dd>
-                            <dt>Roll</dt>
-                            <dd id="die-roller-modal-roll"></dd>
-                            <dt>Result</dt>
-                            <dd id="die-roller-modal-result"></dd>
-                        </dl>
-                    </div>
-                    <div class="modal-footer bg-light">
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                        <h5 class="text-center">
+                            Target: <span id="die-roller-modal-target"></span>
+                            <span class="fst-italic text-body-secondary">
+                                (<span id="die-roller-modal-prob"></span>% chance of success)
+                            </span>
+                        </h5>
+                        <h1 class="text-center" id="die-roller-modal-roll"></h1>
+                        <h3 class="text-center" id="die-roller-modal-result"></h3>
+                        <div><canvas id="rollChart"></canvas></div>
                     </div>
                 </div>
             </div>
         </div>
         <script>
             document.addEventListener('DOMContentLoaded', function(event) {
+                function d6() {
+                    const array = new Uint8Array(1);
+                    window.crypto.getRandomValues(array);
+                    return (array[0] % 6) + 1;
+                }
+
+                function dieIcon(value) {
+                    const map = ['one', 'two', 'three', 'four', 'five', 'six'];
+                    return `<i class="fa-solid fa-dice-${map[value - 1]} text-danger"></i>`;
+                }
+
+                function rollResult(total, target) {
+                    switch (true) {
+                        case total == 3: return 'Critical Success';
+                        case total == 18: return 'Critical Failure';
+                        case total == target: return 'Success';
+                        case total < target: return `Success by ${target - total}`;
+                        default: return `Failure by ${total - target}`;
+                    }
+                }
+
                 // Initialize tooltips.
                 const tooltipList = [...document.querySelectorAll('[data-bs-toggle="tooltip"]')].map(element => new bootstrap.Tooltip(element));
 
+                // Initialize die roll chart.
+                const dieRolls = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
+                const rollProb = [0.46, 1.39, 2.78, 4.63, 6.94, 9.72, 11.57, 12.5, 12.5, 11.57, 9.72, 6.94, 4.63, 2.78, 1.39, 0.46];
+                const successProb = [0.46, 1.85, 4.63, 9.26, 16.20, 25.93, 37.5, 50, 62.5, 74.07, 83.8, 90.74, 95.37, 98.15, 99.54, 100];
+                let rollData = {
+                    labels: dieRolls,
+                    datasets: [{
+                        data: successProb,
+                        fill: true,
+                        pointRadius: new Array(16).fill(3),
+                        segment: {},
+                    }],
+                };
+                let rollChart = new Chart(
+                    document.getElementById('rollChart'),
+                    {
+                        type: 'line',
+                        data: rollData,
+                        options: {
+                            animation: false,
+                            clip: false,
+                            events: [],
+                            plugins: {
+                                legend: {
+                                    display: false,
+                                },
+                                tooltip: {
+                                    enabled: false,
+                                },
+                            },
+                        },
+                    }
+                );
+
+                // Initialize die rollers.
+                const modal = new bootstrap.Modal(document.getElementById('die-roller-modal'));
+                document.querySelectorAll('.roll').forEach(element => element.addEventListener('click', event => {
+                    const skill = event.target.getAttribute('data-skill');
+                    if (skill) {
+                        const rolls = [d6(), d6(), d6()];
+                        const total = rolls[0] + rolls[1] + rolls[2];
+                        const target = parseInt(event.target.innerText);
+                        document.getElementById('die-roller-modal-title').innerText = skill;
+                        document.getElementById('die-roller-modal-target').innerText = target;
+                        document.getElementById('die-roller-modal-prob').innerText = successProb[target - 3];
+                        document.getElementById('die-roller-modal-roll').innerHTML = rolls.map(dieIcon).join(' ') + ' ' + total;
+                        document.getElementById('die-roller-modal-result').innerText = rollResult(total, target);
+                        document.getElementById('die-roller-modal-result').setAttribute('data-result', total <= target ? 'success' : 'failure');
+                        rollData.datasets[0].pointRadius.fill(3);
+                        rollData.datasets[0].pointRadius[total - 3] = 10;
+                        rollData.datasets[0].pointBorderColor = (context) => context.dataIndex <= target - 3 ? '#0D6EFD' : '#DC3545';
+                        rollData.datasets[0].pointBackgroundColor = (context) => context.dataIndex <= target - 3 ? '#0D6EFD' : '#DC3545';
+                        rollData.datasets[0].segment.borderColor = (context) => context.p1DataIndex <= target - 3 ? '#0D6EFD40' : '#DC354540';
+                        rollData.datasets[0].segment.backgroundColor = (context) => context.p1DataIndex <= target - 3 ? '#0D6EFD40' : '#DC354540';
+                        rollChart.update();
+                        modal.show();
+                    }
+                }));
+
                 // Initialize keyboard shortcuts.
+                const keyMap = {
+                    c: 'characteristics',
+                    b: 'background',
+                    d: 'disads',
+                    o: 'combat',
+                    p: 'powers',
+                    s: 'skills',
+                };
                 document.addEventListener('keypress', (event) => {
-                    switch (event.key) {
-                        case 'c':
-                            bootstrap.Tab.getInstance(document.querySelector('#characteristics_button')).show();
-                            break;
-                        case 'b':
-                            bootstrap.Tab.getInstance(document.querySelector('#background_button')).show();
-                            break;
-                        case 'd':
-                            bootstrap.Tab.getInstance(document.querySelector('#disads_button')).show();
-                            break;
-                        case 'o':
-                            bootstrap.Tab.getInstance(document.querySelector('#combat_button')).show();
-                            break;
-                        case 'p':
-                            bootstrap.Tab.getInstance(document.querySelector('#powers_button')).show();
-                            break;
-                        case 's':
-                            bootstrap.Tab.getInstance(document.querySelector('#skills_button')).show();
-                            break;
-                        case 't':
-                            let html = document.querySelector('html');
-                            html.setAttribute('data-bs-theme', html.getAttribute('data-bs-theme') == 'light' ? 'dark' : 'light');
+                    if (event.key in keyMap) {
+                        bootstrap.Tab.getInstance(document.querySelector(`#${keyMap[event.key]}_button`)).show();
+                    }
+                    if (event.key == 't') {
+                        let html = document.querySelector('html');
+                        html.setAttribute('data-bs-theme', html.getAttribute('data-bs-theme') == 'light' ? 'dark' : 'light');
                     }
                 });
             });
