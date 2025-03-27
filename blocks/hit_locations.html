@@ -8,7 +8,10 @@
         <table class="table table-sm table-borderless table-striped text-center">
             <thead class="table-secondary">
                 <tr>
-                    <th>3d6 Roll</th>
+                    <th>
+                        <i class="fa-solid fa-dice-six text-danger" id="roll-hit-location" title="Roll Hit Location"></i>
+                        3d6 Roll
+                    </th>
                     <th>Location</th>
                     <th>STUNx</th>
                     <th>N STUN</th>
@@ -17,7 +20,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr data-roll="5">
                     <td>3 - 5</td>
                     <td>Head</td>
                     <td>x5</td>
@@ -25,7 +28,7 @@
                     <td>x2</td>
                     <td>-8 OCV</td>
                 </tr>
-                <tr>
+                <tr data-roll="6">
                     <td>6</td>
                     <td>Hands</td>
                     <td>x1</td>
@@ -33,7 +36,7 @@
                     <td>x½</td>
                     <td>-6 OCV</td>
                 </tr>
-                <tr>
+                <tr data-roll="8">
                     <td>7 - 8</td>
                     <td>Arms</td>
                     <td>x2</td>
@@ -41,7 +44,7 @@
                     <td>x½</td>
                     <td>-5 OCV</td>
                 </tr>
-                <tr>
+                <tr data-roll="9">
                     <td>9</td>
                     <td>Shoulders</td>
                     <td>x3</td>
@@ -49,7 +52,7 @@
                     <td>x1</td>
                     <td>-5 OCV</td>
                 </tr>
-                <tr>
+                <tr data-roll="11">
                     <td>10 - 11</td>
                     <td>Chest</td>
                     <td>x3</td>
@@ -57,7 +60,7 @@
                     <td>x1</td>
                     <td>-3 OCV</td>
                 </tr>
-                <tr>
+                <tr data-roll="12">
                     <td>12</td>
                     <td>Stomach</td>
                     <td>x4</td>
@@ -65,7 +68,7 @@
                     <td>x1</td>
                     <td>-7 OCV</td>
                 </tr>
-                <tr>
+                <tr data-roll="13">
                     <td>13</td>
                     <td>Vitals</td>
                     <td>x4</td>
@@ -73,7 +76,7 @@
                     <td>x2</td>
                     <td>-8 OCV</td>
                 </tr>
-                <tr>
+                <tr data-roll="14">
                     <td>14</td>
                     <td>Thighs</td>
                     <td>x2</td>
@@ -81,7 +84,7 @@
                     <td>x1</td>
                     <td>-4 OCV</td>
                 </tr>
-                <tr>
+                <tr data-roll="15">
                     <td>15 - 16</td>
                     <td>Legs</td>
                     <td>x2</td>
@@ -89,7 +92,7 @@
                     <td>x½</td>
                     <td>-6 OCV</td>
                 </tr>
-                <tr>
+                <tr data-roll="18">
                     <td>17 - 18</td>
                     <td>Feet</td>
                     <td>x1</td>
@@ -101,3 +104,17 @@
         </table>
     </div>
 </div>
+<script>
+document.getElementById('roll-hit-location').addEventListener('click', () => {
+    let roll = d6() + d6() + d6();
+    const locations = document.querySelectorAll('[data-roll]');
+    locations.forEach((location) => location.classList.remove('table-primary'));
+    for (const location of locations) {
+        if (roll <= location.getAttribute('data-roll')) {
+            location.classList.add('table-primary');
+            setTimeout(() => location.classList.remove('table-primary'), 30000);
+            break;
+        }
+    }
+});
+</script>
