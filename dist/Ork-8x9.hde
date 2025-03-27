@@ -120,7 +120,7 @@ build a new template.
                 color: var(--bs-success) !important;
                 font-weight: bold;
             }
-            .roll {
+            .roll, #roll-hit-location {
                 cursor: pointer;
             }
             .secondary {
@@ -277,7 +277,7 @@ build a new template.
                     <td>BODY</td>
                     <td><!--BODY_BASE--></td>
                     <td></td>
-                    <td class="roll" data-skill=BODY"><!--BODY_ROLL--></td>
+                    <td class="roll" data-skill="BODY"><!--BODY_ROLL--></td>
                     <td class="text-start"><!--BODY_NOTES--></td>
                     <td class="text-end"><!--BODY_COST--></td>
                 </tr>
@@ -953,7 +953,10 @@ build a new template.
         <table class="table table-sm table-borderless table-striped text-center">
             <thead class="table-secondary">
                 <tr>
-                    <th>3d6 Roll</th>
+                    <th>
+                        <i class="fa-solid fa-dice-six text-danger" id="roll-hit-location" title="Roll Hit Location"></i>
+                        3d6 Roll
+                    </th>
                     <th>Location</th>
                     <th>STUNx</th>
                     <th>N STUN</th>
@@ -962,7 +965,7 @@ build a new template.
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr data-roll="5">
                     <td>3 - 5</td>
                     <td>Head</td>
                     <td>x5</td>
@@ -970,7 +973,7 @@ build a new template.
                     <td>x2</td>
                     <td>-8 OCV</td>
                 </tr>
-                <tr>
+                <tr data-roll="6">
                     <td>6</td>
                     <td>Hands</td>
                     <td>x1</td>
@@ -978,7 +981,7 @@ build a new template.
                     <td>x½</td>
                     <td>-6 OCV</td>
                 </tr>
-                <tr>
+                <tr data-roll="8">
                     <td>7 - 8</td>
                     <td>Arms</td>
                     <td>x2</td>
@@ -986,7 +989,7 @@ build a new template.
                     <td>x½</td>
                     <td>-5 OCV</td>
                 </tr>
-                <tr>
+                <tr data-roll="9">
                     <td>9</td>
                     <td>Shoulders</td>
                     <td>x3</td>
@@ -994,7 +997,7 @@ build a new template.
                     <td>x1</td>
                     <td>-5 OCV</td>
                 </tr>
-                <tr>
+                <tr data-roll="11">
                     <td>10 - 11</td>
                     <td>Chest</td>
                     <td>x3</td>
@@ -1002,7 +1005,7 @@ build a new template.
                     <td>x1</td>
                     <td>-3 OCV</td>
                 </tr>
-                <tr>
+                <tr data-roll="12">
                     <td>12</td>
                     <td>Stomach</td>
                     <td>x4</td>
@@ -1010,7 +1013,7 @@ build a new template.
                     <td>x1</td>
                     <td>-7 OCV</td>
                 </tr>
-                <tr>
+                <tr data-roll="13">
                     <td>13</td>
                     <td>Vitals</td>
                     <td>x4</td>
@@ -1018,7 +1021,7 @@ build a new template.
                     <td>x2</td>
                     <td>-8 OCV</td>
                 </tr>
-                <tr>
+                <tr data-roll="14">
                     <td>14</td>
                     <td>Thighs</td>
                     <td>x2</td>
@@ -1026,7 +1029,7 @@ build a new template.
                     <td>x1</td>
                     <td>-4 OCV</td>
                 </tr>
-                <tr>
+                <tr data-roll="15">
                     <td>15 - 16</td>
                     <td>Legs</td>
                     <td>x2</td>
@@ -1034,7 +1037,7 @@ build a new template.
                     <td>x½</td>
                     <td>-6 OCV</td>
                 </tr>
-                <tr>
+                <tr data-roll="18">
                     <td>17 - 18</td>
                     <td>Feet</td>
                     <td>x1</td>
@@ -1046,6 +1049,20 @@ build a new template.
         </table>
     </div>
 </div>
+<script>
+document.getElementById('roll-hit-location').addEventListener('click', () => {
+    let roll = d6() + d6() + d6();
+    const locations = document.querySelectorAll('[data-roll]');
+    locations.forEach((location) => location.classList.remove('table-primary'));
+    for (const location of locations) {
+        if (roll <= location.getAttribute('data-roll')) {
+            location.classList.add('table-primary');
+            setTimeout(() => location.classList.remove('table-primary'), 30000);
+            break;
+        }
+    }
+});
+</script>
 
                 </div>
             </div>
@@ -1192,7 +1209,7 @@ build a new template.
     </div>
 </div>
 <script>
-document.addEventListener('DOMContentLoaded', function(event) {
+document.addEventListener('DOMContentLoaded', () => {
     const imageHex = '<!--IMAGE_HEX_DATA-->';
     const imageName = '<!--IMAGE_RELATIVE_URL-->';
     document.getElementById('portrait-image').src =
@@ -1230,109 +1247,108 @@ document.addEventListener('DOMContentLoaded', function(event) {
             </div>
         </div>
         <script>
-            document.addEventListener('DOMContentLoaded', function(event) {
-                function d6() {
-                    const array = new Uint8Array(1);
-                    window.crypto.getRandomValues(array);
-                    return (array[0] % 6) + 1;
+        function d6() {
+            const array = new Uint8Array(1);
+            window.crypto.getRandomValues(array);
+            return (array[0] % 6) + 1;
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            function dieIcon(value) {
+                const map = ['one', 'two', 'three', 'four', 'five', 'six'];
+                return `<i class="fa-solid fa-dice-${map[value - 1]} text-danger"></i>`;
+            }
+
+            function rollResult(total, target) {
+                switch (true) {
+                    case total == 3: return 'Critical Success';
+                    case total == 18: return 'Critical Failure';
+                    case total == target: return 'Success';
+                    case total < target: return `Success by ${target - total}`;
+                    default: return `Failure by ${total - target}`;
                 }
+            }
 
-                function dieIcon(value) {
-                    const map = ['one', 'two', 'three', 'four', 'five', 'six'];
-                    return `<i class="fa-solid fa-dice-${map[value - 1]} text-danger"></i>`;
-                }
+            // Initialize tooltips.
+            const tooltipList = [...document.querySelectorAll('[data-bs-toggle="tooltip"]')].map(element => new bootstrap.Tooltip(element));
 
-                function rollResult(total, target) {
-                    switch (true) {
-                        case total == 3: return 'Critical Success';
-                        case total == 18: return 'Critical Failure';
-                        case total == target: return 'Success';
-                        case total < target: return `Success by ${target - total}`;
-                        default: return `Failure by ${total - target}`;
-                    }
-                }
-
-                // Initialize tooltips.
-                const tooltipList = [...document.querySelectorAll('[data-bs-toggle="tooltip"]')].map(element => new bootstrap.Tooltip(element));
-
-                // Initialize die roll chart.
-                const dieRolls = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
-                const rollProb = [0.46, 1.39, 2.78, 4.63, 6.94, 9.72, 11.57, 12.5, 12.5, 11.57, 9.72, 6.94, 4.63, 2.78, 1.39, 0.46];
-                const successProb = [0.46, 1.85, 4.63, 9.26, 16.20, 25.93, 37.5, 50, 62.5, 74.07, 83.8, 90.74, 95.37, 98.15, 99.54, 100];
-                let rollData = {
-                    labels: dieRolls,
-                    datasets: [{
-                        data: successProb,
-                        fill: true,
-                        pointRadius: new Array(16).fill(3),
-                        segment: {},
-                    }],
-                };
-                let rollChart = new Chart(
-                    document.getElementById('rollChart'),
-                    {
-                        type: 'line',
-                        data: rollData,
-                        options: {
-                            animation: false,
-                            clip: false,
-                            events: [],
-                            plugins: {
-                                legend: {
-                                    display: false,
-                                },
-                                tooltip: {
-                                    enabled: false,
-                                },
+            // Initialize die roll chart.
+            const dieRolls = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
+            const rollProb = [0.46, 1.39, 2.78, 4.63, 6.94, 9.72, 11.57, 12.5, 12.5, 11.57, 9.72, 6.94, 4.63, 2.78, 1.39, 0.46];
+            const successProb = [0.46, 1.85, 4.63, 9.26, 16.20, 25.93, 37.5, 50, 62.5, 74.07, 83.8, 90.74, 95.37, 98.15, 99.54, 100];
+            let rollData = {
+                labels: dieRolls,
+                datasets: [{
+                    data: successProb,
+                    fill: true,
+                    pointRadius: new Array(16).fill(3),
+                    segment: {},
+                }],
+            };
+            let rollChart = new Chart(
+                document.getElementById('rollChart'),
+                {
+                    type: 'line',
+                    data: rollData,
+                    options: {
+                        animation: false,
+                        clip: false,
+                        events: [],
+                        plugins: {
+                            legend: {
+                                display: false,
+                            },
+                            tooltip: {
+                                enabled: false,
                             },
                         },
-                    }
-                );
+                    },
+                }
+            );
 
-                // Initialize die rollers.
-                const modal = new bootstrap.Modal(document.getElementById('die-roller-modal'));
-                document.querySelectorAll('.roll').forEach(element => element.addEventListener('click', event => {
-                    const skill = event.target.getAttribute('data-skill');
-                    if (skill) {
-                        const rolls = [d6(), d6(), d6()];
-                        const total = rolls[0] + rolls[1] + rolls[2];
-                        const target = parseInt(event.target.innerText);
-                        document.getElementById('die-roller-modal-title').innerText = skill;
-                        document.getElementById('die-roller-modal-target').innerText = target;
-                        document.getElementById('die-roller-modal-prob').innerText = successProb[target - 3];
-                        document.getElementById('die-roller-modal-roll').innerHTML = rolls.map(dieIcon).join(' ') + ' ' + total;
-                        document.getElementById('die-roller-modal-result').innerText = rollResult(total, target);
-                        document.getElementById('die-roller-modal-result').setAttribute('data-result', total <= target ? 'success' : 'failure');
-                        rollData.datasets[0].pointRadius.fill(3);
-                        rollData.datasets[0].pointRadius[total - 3] = 10;
-                        rollData.datasets[0].pointBorderColor = (context) => context.dataIndex <= target - 3 ? '#0D6EFD' : '#DC3545';
-                        rollData.datasets[0].pointBackgroundColor = (context) => context.dataIndex <= target - 3 ? '#0D6EFD' : '#DC3545';
-                        rollData.datasets[0].segment.borderColor = (context) => context.p1DataIndex <= target - 3 ? '#0D6EFD40' : '#DC354540';
-                        rollData.datasets[0].segment.backgroundColor = (context) => context.p1DataIndex <= target - 3 ? '#0D6EFD40' : '#DC354540';
-                        rollChart.update();
-                        modal.show();
-                    }
-                }));
+            // Initialize die rollers.
+            const modal = new bootstrap.Modal(document.getElementById('die-roller-modal'));
+            document.querySelectorAll('.roll').forEach(element => element.addEventListener('click', event => {
+                const skill = event.target.getAttribute('data-skill');
+                if (skill) {
+                    const rolls = [d6(), d6(), d6()];
+                    const total = rolls[0] + rolls[1] + rolls[2];
+                    const target = parseInt(event.target.innerText);
+                    document.getElementById('die-roller-modal-title').innerText = skill;
+                    document.getElementById('die-roller-modal-target').innerText = target;
+                    document.getElementById('die-roller-modal-prob').innerText = successProb[target - 3];
+                    document.getElementById('die-roller-modal-roll').innerHTML = rolls.map(dieIcon).join(' ') + ' ' + total;
+                    document.getElementById('die-roller-modal-result').innerText = rollResult(total, target);
+                    document.getElementById('die-roller-modal-result').setAttribute('data-result', total <= target ? 'success' : 'failure');
+                    rollData.datasets[0].pointRadius.fill(3);
+                    rollData.datasets[0].pointRadius[total - 3] = 10;
+                    rollData.datasets[0].pointBorderColor = (context) => context.dataIndex <= target - 3 ? '#0D6EFD' : '#DC3545';
+                    rollData.datasets[0].pointBackgroundColor = (context) => context.dataIndex <= target - 3 ? '#0D6EFD' : '#DC3545';
+                    rollData.datasets[0].segment.borderColor = (context) => context.p1DataIndex <= target - 3 ? '#0D6EFD40' : '#DC354540';
+                    rollData.datasets[0].segment.backgroundColor = (context) => context.p1DataIndex <= target - 3 ? '#0D6EFD40' : '#DC354540';
+                    rollChart.update();
+                    modal.show();
+                }
+            }));
 
-                // Initialize keyboard shortcuts.
-                const keyMap = {
-                    c: 'characteristics',
-                    b: 'background',
-                    d: 'disads',
-                    o: 'combat',
-                    p: 'powers',
-                    s: 'skills',
-                };
-                document.addEventListener('keypress', (event) => {
-                    if (event.key in keyMap) {
-                        bootstrap.Tab.getInstance(document.querySelector(`#${keyMap[event.key]}_button`)).show();
-                    }
-                    if (event.key == 't') {
-                        let html = document.querySelector('html');
-                        html.setAttribute('data-bs-theme', html.getAttribute('data-bs-theme') == 'light' ? 'dark' : 'light');
-                    }
-                });
+            // Initialize keyboard shortcuts.
+            const keyMap = {
+                c: 'characteristics',
+                b: 'background',
+                d: 'disads',
+                o: 'combat',
+                p: 'powers',
+                s: 'skills',
+            };
+            document.addEventListener('keypress', event => {
+                if (event.key in keyMap) {
+                    bootstrap.Tab.getInstance(document.querySelector(`#${keyMap[event.key]}_button`)).show();
+                }
+                if (event.key == 't') {
+                    let html = document.querySelector('html');
+                    html.setAttribute('data-bs-theme', html.getAttribute('data-bs-theme') == 'light' ? 'dark' : 'light');
+                }
             });
+        });
         </script>
     </body>
 </html>
