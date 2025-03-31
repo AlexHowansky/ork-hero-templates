@@ -15,8 +15,8 @@ This project contains a set of [HERO Designer](https://www.herogames.com/store/p
 
 ## Live Examples
 
-- [8 x 9](examples/Azarra-8x9.html)
-- [16 x 9](examples/Azarra-16x9.html)
+- [8 x 9](https://alexhowansky.github.io/ork-hero-templates/examples/Azarra-8x9.html)
+- [16 x 9](https://alexhowansky.github.io/ork-hero-templates/examples/Azarra-16x9.html)
 
 ## Use
 
