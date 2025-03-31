@@ -8,24 +8,17 @@
     <div id="portrait-collapse" class="collapse show">
         <table class="table table-sm table-borderless table-striped">
             <tbody>
-                <!--IMAGE-->
                 <tr>
                     <td class="text-center p-0">
-                        <img id="portrait-image" class="img-fluid" alt="<!--CHARACTER_NAME-->">
+                        <img id="portrait-image" class="img-fluid" title="<!--CHARACTER_NAME-->">
                     </td>
                 </tr>
-                <!--/IMAGE-->
             </tbody>
         </table>
     </div>
 </div>
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const imageHex = '<!--IMAGE_HEX_DATA-->';
-    const imageName = '<!--IMAGE_RELATIVE_URL-->';
-    document.getElementById('portrait-image').src =
-        'data:image/' + imageName.split('.').pop() + ';base64,' + btoa([...imageHex].reduce((acc, _, i) =>
-            acc += !(i - 1 & 1) ? String.fromCharCode(parseInt(imageHex.substring(i - 1, i + 1), 16)) : '', ''));
-});
+const imageHex = '<!--IMAGE_HEX_DATA-->';
+const imageName = '<!--IMAGE_RELATIVE_URL-->';
 </script>
 <!--/IF_IMAGE-->

@@ -1,0 +1,21 @@
+{
+    "name": "ork/hero-templates",
+    "description": "HERO Designer character export templates with customizable features and active elements.",
+    "keywords": ["ork"],
+    "homepage": "http://github.com/AlexHowansky/ork-hero-templates",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alex Howansky",
+            "email": "alex.howansky@gmail.com",
+            "homepage": "https://github.com/AlexHowansky"
+        }
+    ],
+    "require": {
+        "php": "^8.4",
+        "ext-dom": "*"
+    },
+    "require-dev": {
+        "matthiasmullie/minify": "^1.3"
+    }
+}

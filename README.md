@@ -4,6 +4,7 @@ This project contains a set of [HERO Designer](https://www.herogames.com/store/p
 
 ## Features
 
+- [Multiple Layouts](#layouts) - choose which best fits your preferred window size
 - [Active Tabs](#tabs) - content is always above the fold
 - [Embedded Portrait](#embedded-portrait) - no separate image file required
 - [Light and Dark Mode](#light-and-dark-mode) - both on the same sheet
@@ -12,18 +13,9 @@ This project contains a set of [HERO Designer](https://www.herogames.com/store/p
 - [Hotkeys](#hotkeys) - keyboard shortcuts for common items
 - [Embedded CSS Customization](#embedded-css-customization) - CSS can be stored in the `*.hdc` file and automatically applied on each export
 
-## Layouts
-
-A layout defines a particular arrangement of display items. There are multiple layouts available, each provided as a separate template file. The informational content of each layout is identical, only the positioning of elements differs.
-
-|File|Description|
-|-|-|
-|`Ork-16x9.hde`|This layout is designed to fit a maximized window on a 16:9 monitor. It crams as much information onto the screen as possible. It is most useful when you have multiple monitors.|
-|`Ork-8x9.hde`|This layout is designed to fit a half-wide window on a 16:9 monitor. It is most useful when splitting multiple windows on one monitor.|
-
 ## Use
 
-* Download the latest `*.hde` template files from the [repository releases page](https://github.com/AlexHowansky/ork-hero-templates/releases) and copy them to your HERO Designer installation directory.
+* Download the latest `*.hde` template files from the [repository releases page](https://github.com/AlexHowansky/ork-hero-templates/releases) and copy them to your HERO Designer installation directory or wherever you prefer to keep your export templates.
 * Launch HERO Designer and load the desired character.
 * Select `Current Character` > `Export` > `Set Export Format...`, select the desired template, and click the `Select` button.
 * Save the character to make this choice persistent.
@@ -34,9 +26,18 @@ A layout defines a particular arrangement of display items. There are multiple l
 * The templates use the `Background` > `Campaign Use` field to store metadata. If you are experiencing any rendering issues, try emptying this field and re-exporting.
 * HERO Designer does not escape any output. Avoid using any HTML special characters like quotes, ampersands, and less-than signs in your descriptions, names, and notes.
 
-## Active Features
+## Features
 
 Ork HERO Templates use JavaScript to render active features in real time.
+
+### Layouts
+
+A layout defines a particular arrangement of display items. There are multiple layouts available, each provided as a separate template file. The informational content of each layout is identical, only the positioning of elements differs.
+
+|File|Description|
+|-|-|
+|`Ork-16x9.hde`|This layout is designed to fit a maximized window on a 16:9 monitor. It crams as much information onto the screen as possible. It is most useful when you have multiple monitors.|
+|`Ork-8x9.hde`|This layout is designed to fit a half-wide window on a 16:9 monitor. It is most useful when splitting multiple windows on one monitor.|
 
 ### Tabs
 
@@ -63,6 +64,10 @@ An integrated die roller is available for many 3d6 rolls. Click on the target va
 
 ![integrated die roller](media/die_roller.png)
 
+An integrated die roller is also available for the hit locations block. Click on the red die icon to make a roll. The rolled location will be highlighted in the table for 30 seconds.
+
+![hit location roller](media/hit_location.png)
+
 ### Collapsible Blocks
 
 All blocks are collapsible, and may have their state toggled between open and closed by clicking on the block's title bar.
@@ -87,7 +92,7 @@ The following hotkeys are supported:
 
 Various features of this template can be configured from metadata stored in the character sheet itself. This allows for automatic customization of the resulting output, every time it is exported, without the need to subsequently edit the generated file.
 
-This is accomplished by storing [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) in the `Campaign Use` field on the `Background` tab of your character file. If you wish to make use of this feature, populate the field with only CSS, do not include any `<style>` tags or other information. This CSS will be extracted by the template when the page is generated and will be applied to the resulting HTML. Some of the customizable elements are as follows:
+This is accomplished by storing [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) in the `Campaign Use` field on the `Background` tab of your character file. If you wish to make use of this feature, populate the field with only CSS, do not include any `<style>` tags or other information. This CSS will be extracted by the template when the page is generated and will be applied to the resulting HTML. Virtually any part of the template may be targeted, but there are a number of specificially-named  customizable elements:
 
 |CSS Selector|Target|
 |-|-|
@@ -100,6 +105,7 @@ This is accomplished by storing [CSS](https://developer.mozilla.org/en-US/docs/W
 |`.list-item`|List member items.|
 |`.primary`|Primary characteristic values.|
 |`.secondary`|Secondary characteristic values.|
+|`.tooltip`|Hover tooltips.|
 
 The most useful of these customizations is arguably the ability to import web fonts, such as those from [Google Web Fonts](https://fonts.google.com/) and [CDN Fonts](https://www.cdnfonts.com/).
 
@@ -161,13 +167,15 @@ If you import more than one font, all the `@import` statements must be at the to
 
 ## Development
 
-The templates make use of [Twitter Bootstrap](https://getbootstrap.com/), [Font Awesome](fontawesome.com), and [Chart.js](https://www.chartjs.org/). All resources are loaded dynamically from CDNs.
+The templates make use of [Twitter Bootstrap](https://getbootstrap.com/), [Font Awesome](fontawesome.com), and [Chart.js](https://www.chartjs.org/). All resources are loaded dynamically from CDNs. The build process makes use of [PHP](https://php.net/) and [Composer](https://getcomposer.org/).
 
 Source files are separated into chunks according to type so that content-aware IDEs can offer proper tooling. Some string replacement anchors have been replaced with alternatives that are valid comments in the langauge block where they're used, so that they do not break IDE tooling or syntax highlighting.
 
 |File|Contents|
 |-|-|
 |`page.html`|Common HTML page wrapper for all layouts.|
+|`page.css`|Default CSS for the page.|
+|`page.js`|JavaScript for active elements.|
 |`template.xml`|Common template tags for all layouts.|
 |`layouts/*.html`|Layout-specific HTML.|
 |`layouts/*.xml`|Layout-specific template tags.|

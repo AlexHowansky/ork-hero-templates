@@ -7,4 +7,4 @@ then
 fi
 
 clear
-ls template.xml page.html blocks/* layouts/* | entr ./build.php "${1}"
+ls build.php page.* template.xml blocks/* layouts/* | entr ./build.php "${1}"

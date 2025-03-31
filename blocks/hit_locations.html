@@ -104,17 +104,3 @@
         </table>
     </div>
 </div>
-<script>
-document.getElementById('roll-hit-location').addEventListener('click', () => {
-    let roll = d6() + d6() + d6();
-    const locations = document.querySelectorAll('[data-roll]');
-    locations.forEach((location) => location.classList.remove('table-primary'));
-    for (const location of locations) {
-        if (roll <= location.getAttribute('data-roll')) {
-            location.classList.add('table-primary');
-            setTimeout(() => location.classList.remove('table-primary'), 30000);
-            break;
-        }
-    }
-});
-</script>

@@ -1,0 +1,138 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+.ability-name {
+    color: var(--bs-success);
+    font-style: italic;
+    font-weight: bold;
+}
+
+.block {
+    border: 1px solid var(--bs-secondary);
+    margin-bottom: 0.6rem;
+}
+
+.block-title {
+    background-color: var(--bs-light);
+    border-bottom: 1px solid var(--bs-secondary) !important;
+    color: var(--bs-primary) !important;
+    font-family: 'Acme';
+    font-size: 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+}
+
+.block-title i {
+    float: right;
+    padding-right: 0.4rem;
+    padding-top: 0.3rem;
+}
+
+.block-title.collapsed i.collapse-expand {
+    display: inline;
+}
+
+.block-title.collapsed i.collapse-shrink {
+    display: none;
+}
+
+.block-title:not(.collapsed) i.collapse-expand {
+    display: none;
+}
+
+.block-title:not(.collapsed) i.collapse-shrink {
+    display: inline;
+}
+
+.character-name {
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+[data-bs-toggle='tooltip'] {
+    color: var(--bs-primary);
+    cursor: help;
+}
+
+#die-roller-modal-result[data-result='failure']::before {
+    color: var(--bs-danger);
+    content: '\f165';
+    font-family: 'Font Awesome 6 Free';
+    padding-right: 0.5rem;
+}
+
+#die-roller-modal-result[data-result='success']::before {
+    color: var(--bs-primary);
+    content: '\f164';
+    font-family: 'Font Awesome 6 Free';
+    padding-right: 0.5rem;
+}
+
+.list {
+    color: var(--bs-info) !important;
+    font-weight: bold;
+}
+
+.list::before {
+    color: var(--bs-secondary);
+    content: '\f0ca';
+    font-family: 'Font Awesome 6 Free';
+}
+
+.list-item::before {
+    color: var(--bs-secondary) !important;
+    content: '┗━';
+    font-weight: bold;
+    padding-left: 1rem;
+}
+
+.nav-link {
+    color: var(--bs-secondary) !important;
+    font-family: 'Acme';
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.nav-link.active {
+    background-color: var(--bs-light) !important;
+    color: var(--bs-primary) !important;
+}
+
+.note {
+    color: var(--bs-secondary);
+    font-size: 0.85rem;
+    font-style: italic;
+    padding-left: 1rem;
+}
+
+.primary, .roll {
+    color: var(--bs-success) !important;
+    font-weight: bold;
+}
+
+.roll, #roll-hit-location {
+    cursor: pointer;
+}
+
+.secondary {
+    color: var(--bs-danger);
+    font-weight: bold;
+}
+
+.table {
+    margin: 0;
+}
+
+.table tr td {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.tooltip {
+    --bs-tooltip-color: var(--bs-light);
+    --bs-tooltip-bg: var(--bs-secondary);
+    --bs-tooltip-font-size: var(--bs-body-font-size);
+    --bs-tooltip-max-width: 400px;
+    --bs-tooltip-opacity: 1;
+}
