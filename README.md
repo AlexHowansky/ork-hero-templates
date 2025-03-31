@@ -13,6 +13,11 @@ This project contains a set of [HERO Designer](https://www.herogames.com/store/p
 - [Hotkeys](#hotkeys) - keyboard shortcuts for common items
 - [Embedded CSS Customization](#embedded-css-customization) - CSS can be stored in the `*.hdc` file and automatically applied on each export
 
+## Live Examples
+
+- [8 x 9](examples/Azarra-8x9.html)
+- [16 x 9](examples/Azarra-16x9.html)
+
 ## Use
 
 * Download the latest `*.hde` template files from the [repository releases page](https://github.com/AlexHowansky/ork-hero-templates/releases) and copy them to your HERO Designer installation directory or wherever you prefer to keep your export templates.
