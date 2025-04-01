@@ -111,7 +111,7 @@
     font-weight: bold;
 }
 
-.roll, #roll-hit-location {
+.roll, .roll-hit-location {
     cursor: pointer;
 }
 

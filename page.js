@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    function d6() {
-        const array = new Uint8Array(1);
-        window.crypto.getRandomValues(array);
-        return (array[0] % 6) + 1;
+    function d6(num = 1, adder = 0) {
+        const array = new Uint8Array(parseInt(num));
+        self.crypto.getRandomValues(array);
+        return array.map(r => (r % 6) + 1).reduce((p, a) => p + a, 0) + parseInt(adder);
     }
 
     function dieIcon(value) {
@@ -102,8 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Hit location chart roller.
-    document.getElementById('roll-hit-location').addEventListener('click', () => {
-        let roll = d6() + d6() + d6();
+    document.querySelectorAll('.roll-hit-location').forEach(element => element.addEventListener('click', event => {
+        let roll = d6(event.target.getAttribute('data-dice'), event.target.getAttribute('data-adder'));
         const locations = document.querySelectorAll('[data-roll]');
         locations.forEach((location) => location.classList.remove('table-primary'));
         for (const location of locations) {
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             }
         }
-    });
+    }));
 
     // Portrait image decoder.
     //
