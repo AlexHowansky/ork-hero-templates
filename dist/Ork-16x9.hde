@@ -71,6 +71,12 @@ Powers
 </button>
 </li>
 <li class="nav-item pe-1">
+<button class="nav-link" data-bs-toggle="tab" data-bs-target="#combat_pane" type="button" id="combat_button">
+<i class="fa-solid fa-hand-fist"></i>
+Combat
+</button>
+</li>
+<li class="nav-item pe-1">
 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#background_pane" type="button" id="background_button">
 <i class="fa-solid fa-book"></i>
 Background
@@ -80,7 +86,7 @@ Background
 <div class="tab-content">
 <div class="tab-pane show active" id="characteristics_pane">
 <div class="row g-2">
-<div class="col-4">
+<div class="col-5">
 <div class="block" id="characteristics-block">
 <div class="block-title" data-bs-toggle="collapse" data-bs-target="#characteristics-collapse">
 Characteristics
@@ -351,7 +357,7 @@ Characteristics
 </div>
 
 </div>
-<div class="col-2">
+<div class="col-3">
 <!--IFSKILLS-->
 <div class="block" id="skills-block">
 <div class="block-title" data-bs-toggle="collapse" data-bs-target="#skills-collapse">
@@ -397,7 +403,7 @@ Skills
 <!--/IFSKILLS-->
 
 </div>
-<div class="col-2">
+<div class="col-4">
 <!--IFPERKS-->
 <div class="block" id="perks-block">
 <div class="block-title" data-bs-toggle="collapse" data-bs-target="#perks-collapse">
@@ -478,9 +484,98 @@ Talents
 <!--/IFTALENTS-->
 
 </div>
-<div class="col-4">
+</div>
+</div>
+<div class="tab-pane" id="powers_pane">
 <div class="row g-2">
-<div class="col-6">
+<div class="col-7">
+<!--IFPOWERS-->
+<div class="block" id="powers-block">
+<div class="block-title" data-bs-toggle="collapse" data-bs-target="#powers-collapse">
+Powers
+<i class="collapse-expand fa-solid fa-caret-down"></i>
+<i class="collapse-shrink fa-solid fa-caret-up"></i>
+</div>
+<div id="powers-collapse" class="collapse show">
+<table class="table table-sm table-borderless table-striped text-end">
+<thead class="table-secondary">
+<tr>
+<th>End</th>
+<th class="text-start">Power</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<!--POWERS-->
+<tr>
+<td class="text-nowrap"><!--POWER_END--></td>
+<td class="text-start <!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
+<!--IFNAME--><span class="ability-name"><!--NAME-->: </span><!--/IFNAME-->
+<!--POWER_TEXT-->
+&nbsp;
+<!--IFNOTES--><div class="note">Note: <!--POWER_NOTES--></div><!--/IFNOTES-->
+</td>
+<td><!--POWER_COST--></td>
+</tr>
+<!--/POWERS-->
+</tbody>
+<tfoot class="table-secondary">
+<tr>
+<th colspan="2">Total Power Points</th>
+<th><!--POWER_POINTS--></th>
+</tr>
+</tfoot>
+</table>
+</div>
+</div>
+<!--/IFPOWERS-->
+
+</div>
+<div class="col-5">
+<!--IFDISADS-->
+<div class="block" id="disads-block">
+<div class="block-title" data-bs-toggle="collapse" data-bs-target="#disads-collapse">
+Disads
+<i class="collapse-expand fa-solid fa-caret-down"></i>
+<i class="collapse-shrink fa-solid fa-caret-up"></i>
+</div>
+<div id="disads-collapse" class="collapse show">
+<table class="table table-sm table-borderless table-striped">
+<thead class="table-secondary">
+<tr>
+<th>Name</th>
+<th class="text-end">Cost</th>
+</tr>
+</thead>
+<tbody>
+<!--DISADS-->
+<tr>
+<td class="<!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
+<!--DISAD_TEXT-->
+&nbsp;
+<!--IFNOTES--><div class="note">Note: <!--DISAD_NOTES--></div><!--/IFNOTES-->
+</td>
+<td class="text-end"><!--DISAD_COST--></td>
+</tr>
+<!--/DISADS-->
+</tbody>
+<tfoot class="table-secondary">
+<tr>
+<th class="text-end">Total Disad Points</th>
+<th class="text-end"><!--DISAD_POINTS--></th>
+</tr>
+</tfoot>
+</table>
+</div>
+</div>
+<!--/IFDISADS-->
+
+</div>
+</div>
+</div>
+<div class="tab-pane" id="combat_pane">
+<div class="row g-2">
+<div class="col-3">
 <div class="block" id="combat-info-block">
 <div class="block-title" data-bs-toggle="collapse" data-bs-target="#combat-info-collapse">
 Combat Info
@@ -526,8 +621,6 @@ Combat Skill Levels
 </div>
 <!--/IFCOMBAT_LEVELS-->
 
-</div>
-<div class="col-6">
 <div class="block" id="defenses-block">
 <div class="block-title" data-bs-toggle="collapse" data-bs-target="#defenses-collapse">
 Defenses
@@ -574,7 +667,7 @@ Defenses
 </div>
 
 </div>
-</div>
+<div class="col-5">
 <!--IFMANEUVERS-->
 <div class="block" id="martial-maneuvers-block">
 <div class="block-title" data-bs-toggle="collapse" data-bs-target="#martial-maneuvers-collapse">
@@ -742,6 +835,8 @@ STR or weapon
 </div>
 </div>
 
+</div>
+<div class="col-4">
 <div class="block" id="range-modifiers-block">
 <div class="block-title" data-bs-toggle="collapse" data-bs-target="#range-modifiers-collapse">
 Range Modifiers
@@ -945,96 +1040,9 @@ Targeting Modifiers
 </div>
 </div>
 </div>
-<div class="tab-pane" id="powers_pane">
-<div class="row g-2">
-<div class="col-6">
-<!--IFPOWERS-->
-<div class="block" id="powers-block">
-<div class="block-title" data-bs-toggle="collapse" data-bs-target="#powers-collapse">
-Powers
-<i class="collapse-expand fa-solid fa-caret-down"></i>
-<i class="collapse-shrink fa-solid fa-caret-up"></i>
-</div>
-<div id="powers-collapse" class="collapse show">
-<table class="table table-sm table-borderless table-striped text-end">
-<thead class="table-secondary">
-<tr>
-<th>End</th>
-<th class="text-start">Power</th>
-<th>Cost</th>
-</tr>
-</thead>
-<tbody>
-<!--POWERS-->
-<tr>
-<td class="text-nowrap"><!--POWER_END--></td>
-<td class="text-start <!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
-<!--IFNAME--><span class="ability-name"><!--NAME-->: </span><!--/IFNAME-->
-<!--POWER_TEXT-->
-&nbsp;
-<!--IFNOTES--><div class="note">Note: <!--POWER_NOTES--></div><!--/IFNOTES-->
-</td>
-<td><!--POWER_COST--></td>
-</tr>
-<!--/POWERS-->
-</tbody>
-<tfoot class="table-secondary">
-<tr>
-<th colspan="2">Total Power Points</th>
-<th><!--POWER_POINTS--></th>
-</tr>
-</tfoot>
-</table>
-</div>
-</div>
-<!--/IFPOWERS-->
-
-</div>
-<div class="col-6">
-<!--IFDISADS-->
-<div class="block" id="disads-block">
-<div class="block-title" data-bs-toggle="collapse" data-bs-target="#disads-collapse">
-Disads
-<i class="collapse-expand fa-solid fa-caret-down"></i>
-<i class="collapse-shrink fa-solid fa-caret-up"></i>
-</div>
-<div id="disads-collapse" class="collapse show">
-<table class="table table-sm table-borderless table-striped">
-<thead class="table-secondary">
-<tr>
-<th>Name</th>
-<th class="text-end">Cost</th>
-</tr>
-</thead>
-<tbody>
-<!--DISADS-->
-<tr>
-<td class="<!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
-<!--DISAD_TEXT-->
-&nbsp;
-<!--IFNOTES--><div class="note">Note: <!--DISAD_NOTES--></div><!--/IFNOTES-->
-</td>
-<td class="text-end"><!--DISAD_COST--></td>
-</tr>
-<!--/DISADS-->
-</tbody>
-<tfoot class="table-secondary">
-<tr>
-<th class="text-end">Total Disad Points</th>
-<th class="text-end"><!--DISAD_POINTS--></th>
-</tr>
-</tfoot>
-</table>
-</div>
-</div>
-<!--/IFDISADS-->
-
-</div>
-</div>
-</div>
 <div class="tab-pane" id="background_pane">
 <div class="row g-2">
-<div class="col-6">
+<div class="col-8">
 <!--IF_BACKGROUND-->
 <div class="block" id="background-block">
 <div class="block-title" data-bs-toggle="collapse" data-bs-target="#background-collapse">
@@ -1111,7 +1119,7 @@ Appearance
 <!--/IF_APPEARANCE-->
 
 </div>
-<div class="col-6">
+<div class="col-4">
 <!--IF_IMAGE-->
 <div class="block" id="portrait-block">
 <div class="block-title" data-bs-toggle="collapse" data-bs-target="#portrait-collapse">

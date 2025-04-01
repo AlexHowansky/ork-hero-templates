@@ -95,26 +95,65 @@ The following hotkeys are supported:
 
 ### Embedded CSS Customization
 
-Various features of this template can be configured from metadata stored in the character sheet itself. This allows for automatic customization of the resulting output, every time it is exported, without the need to subsequently edit the generated file.
+Various features of this template can be configured from metadata stored in the character sheet itself. This allows for automatic customization of the resulting output, every time it is exported, without the need to subsequently edit the generated HTML file.
 
-This is accomplished by storing [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) in the `Campaign Use` field on the `Background` tab of your character file. If you wish to make use of this feature, populate the field with only CSS, do not include any `<style>` tags or other information. This CSS will be extracted by the template when the page is generated and will be applied to the resulting HTML. Virtually any part of the template may be targeted, but there are a number of specificially-named  customizable elements:
+This is accomplished by placing [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) in the `Campaign Use` field on the `Background` tab of your character file. If you wish to make use of this feature, populate the field with _only_ CSS, do not include any `<style>` tags or other information. This CSS will be extracted by the template when the page is generated and will be applied to the resulting HTML. Virtually any part of the template may be targeted. For example, fonts and colors may be changed or individual content blocks hidden.
+
+#### Hiding Blocks
+
+Each content block has a unique id and may be targeted by a CSS selector to apply customizations. These are:
+
+- `#background-appearance-block`
+- `#background-block`
+- `#background-personality-block`
+- `#background-quote-block`
+- `#background-tactics-block`
+- `#characteristics-block`
+- `#combat-info-block`
+- `#combat-skill-levels-block`
+- `#defenses-block`
+- `#disads-block`
+- `#hit-location-block`
+- `#martial-maneuvers-block`
+- `#perks-block`
+- `#portrait-block`
+- `#powers-block`
+- `#range-modifiers-block`
+- `#skills-block`
+- `#standard-maneuvers-block`
+- `#talents-block`
+- `#targeting-modifiers-block`
+
+For example, if you do not use hit locations, you may completely hide the associated blocks by placing this CSS in your `Campaign Use` field:
+
+```css
+#hit-locations-block, #targeting-modifiers-block {
+    display: none;
+}
+```
+
+#### Changing Fonts and Colors
+
+There are also number of customizable elements named by class. These may be used to target all the associated elements of that type.
 
 |CSS Selector|Target|
 |-|-|
-|`.character-name`|The large character name at the top of the page.|
-|`.nav-link`|The navigation tab buttons.|
-|`.block-title`|The title bar at the top of each table block.|\
 |`.ability-name`|Used for custom names for powers, skills, perks, and talents.|
-|`.note`|Notes for powers, skills, perks, talents, and disads.|
+|`.block`|All content blocks.|
+|`.block-title`|The title bar at the top of each content block.|
+|`.character-name`|The large character name at the top of the page.|
 |`.list`|List header items.|
 |`.list-item`|List member items.|
+|`.nav-link`|The navigation tab buttons.|
+|`.note`|Notes for powers, skills, perks, talents, and disads.|
 |`.primary`|Primary characteristic values.|
+|`.roll`|Values that can be rolled by the integrated die roller.|
 |`.secondary`|Secondary characteristic values.|
 |`.tooltip`|Hover tooltips.|
 
 The most useful of these customizations is arguably the ability to import web fonts, such as those from [Google Web Fonts](https://fonts.google.com/) and [CDN Fonts](https://www.cdnfonts.com/).
 
-#### Google Web Fonts
+##### Google Web Fonts
 
 Look up a desired font on [Google Web Fonts](https://fonts.google.com/) then click `Get Font`, `Get Embed Code`, and select the `@import` radio. Copy and paste the supplied `@import` CSS line (do not include the `<style>` tags) into the `Campaign Use` field and then add a `font-family` attribute to apply the name of the font to the desired CSS selector. For example, to change the font of your character's name:
 
@@ -125,7 +164,7 @@ Look up a desired font on [Google Web Fonts](https://fonts.google.com/) then cli
 }
 ```
 
-#### CDN Fonts
+##### CDN Fonts
 
 Look up a desired font on [CDN Fonts](https://www.cdnfonts.com/) then click its name to zoom to the font detail page. From there, copy the `@import` CSS line (do not include the `<style>` tags) into the `Campaign Use` field and add the `font-family` attribute as desribed above.
 
@@ -136,7 +175,7 @@ Look up a desired font on [CDN Fonts](https://www.cdnfonts.com/) then click its 
 }
 ```
 
-If you import more than one font, all the `@import` statements must be at the top:
+Note that if you import more than one font, all the `@import` statements must be at the top:
 
 ```css
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');

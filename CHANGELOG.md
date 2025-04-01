@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## unreleased
+
+### Added
+
+- Targeting modifiers block.
+- Combat tab to 16x9 layout.
+
 ## [0.6.0] - 2025-03-31
 
 ### Added
