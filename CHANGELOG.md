@@ -4,12 +4,12 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## unreleased
+## [0.7.0] - 2025-04-02
 
 ### Added
 
 - Targeting modifiers block.
-- Combat tab to 16x9 layout.
+- New combat tab for the 16x9 layout.
 
 ## [0.6.0] - 2025-03-31
 
@@ -58,6 +58,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - Initial version.
 
+[0.7.0]: https://github.com/AlexHowansky/ork-hero-templates/compare/0.6.0...0.7.0
 [0.6.0]: https://github.com/AlexHowansky/ork-hero-templates/compare/0.5.0...0.6.0
 [0.5.0]: https://github.com/AlexHowansky/ork-hero-templates/compare/0.4.0...0.5.0
 [0.4.0]: https://github.com/AlexHowansky/ork-hero-templates/compare/0.3.0...0.4.0

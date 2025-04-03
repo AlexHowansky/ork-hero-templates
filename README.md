@@ -73,6 +73,10 @@ An integrated die roller is also available for the hit locations block. Click on
 
 ![hit location roller](media/hit_location.png)
 
+This also works for the targeting modifiers block.
+
+![targeting modifiers](media/targeting_modifiers.png)
+
 ### Collapsible Blocks
 
 All blocks are collapsible, and may have their state toggled between open and closed by clicking on the block's title bar.
