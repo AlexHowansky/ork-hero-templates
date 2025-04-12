@@ -91,6 +91,7 @@ The following hotkeys are supported:
 |:-:|-|
 |t|Toggle light/dark mode.|
 |c|Navigate to the Characteristics tab.|
+|e|Navigate to the Equipment tab.|
 |s|Navigate to the Skills tab.|
 |p|Navigate to the Powers tab.|
 |o|Navigate to the Combat tab.|

@@ -46,6 +46,7 @@
 }
 
 .character-name {
+    font-family: 'Acme';
     font-size: 3rem;
     line-height: 1.2;
 }
@@ -92,6 +93,7 @@
     font-family: 'Acme';
     font-size: 1.25rem;
     font-weight: bold;
+    padding: 4px 10px 0px 10px;
 }
 
 .nav-link.active {

@@ -87,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
         c: 'characteristics',
         b: 'background',
         d: 'disads',
+        e: 'equipment',
         o: 'combat',
         p: 'powers',
         s: 'skills',

@@ -1,0 +1,42 @@
+<!--IFEQUIPMENT-->
+<div class="block" id="equipment-block">
+    <div class="block-title" data-bs-toggle="collapse" data-bs-target="#equipment-collapse">
+        Equipment
+        <i class="collapse-expand fa-solid fa-caret-down"></i>
+        <i class="collapse-shrink fa-solid fa-caret-up"></i>
+    </div>
+    <div id="equipment-collapse" class="collapse show">
+        <table class="table table-sm table-borderless table-striped text-end">
+            <thead class="table-secondary">
+                <tr>
+                    <th>End</th>
+                    <th class="text-start">Equipment</th>
+                    <th>Quantity</th>
+                    <th>Weight</th>
+                    <th>Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--EQUIPMENT-->
+                <tr>
+                    <td class="text-nowrap"><!--EQUIPMENT_END--></td>
+                    <td class="text-start <!--IS_LIST-->list<!--/IS_LIST--> <!--IS_LIST_ITEM-->list-item<!--/IS_LIST_ITEM-->">
+                        <!--IFNAME--><span class="ability-name"><!--NAME-->: </span><!--/IFNAME-->
+                        <!--EQUIPMENT_TEXT-->
+                        &nbsp;
+                        <!--IFNOTES--><div class="note">Note: <!--EQUIPMENT_NOTES--></div><!--/IFNOTES-->
+                    </td>
+                    <td>
+                        <!--IS_NOT_LIST-->
+                        <!--MATH--><!--EQUIPMENT_TOTAL_VALUE-->/<!--EQUIPMENT_VALUE--><!--/MATH-->
+                        <!--/IS_NOT_LIST-->
+                    </td>
+                    <td><!--EQUIPMENT_TOTAL_WEIGHT--></td>
+                    <td><!--EQUIPMENT_TOTAL_VALUE--></td>
+                </tr>
+                <!--/EQUIPMENT-->
+            </tbody>
+          </table>
+    </div>
+</div>
+<!--/IFEQUIPMENT-->
