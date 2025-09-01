@@ -9,8 +9,16 @@ use MatthiasMullie\Minify\JS;
 
 libxml_use_internal_errors(true);
 
+$changelog = file_get_contents(__DIR__ . '/CHANGELOG.md');
+if (preg_match('/^## \[([\d\.]+)\] \- \d{4}\-\d{2}\-\d{2}$/m', $changelog, $matches) !== 1) {
+    throw new RuntimeException('Unable to determine version from changelog file.');
+}
+$version = $matches[1];
+
 foreach (glob('layouts/*.html') as $layoutFileHtml) {
     $output = file_get_contents('page.html');
+    $output = str_replace('/*VERSION*/', $version, $output);
+    $output = str_replace('/*LAYOUT*/', basename($layoutFileHtml, '.html'), $output);
     $output = str_replace('<!--LAYOUT-->', file_get_contents($layoutFileHtml), $output);
     $output = str_replace('/*CSS*/', new CSS('page.css')->minify(), $output);
     $output = str_replace('/*CUSTOM_CSS*/', '<!--CAMPAIGN_USE--><!--/CAMPAIGN_USE-->', $output);

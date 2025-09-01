@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.9.0] - 2025-08-31
+
+### Added
+
+- The page header now includes the layout that was used to generate it.
+
+### Changed
+
+- The theme now automatically switches to light/dark mode based on the user's browser preference.
+- The version number in the page header is now parsed automatically from the changelog file.
+
 ## [0.8.0] - 2025-04-12
 
 ### Added
