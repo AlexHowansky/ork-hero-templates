@@ -4,8 +4,11 @@ GIT_TAG_VERSION=$(git tag | sort -Vr | head -1)
 echo "git tag version: ${GIT_TAG_VERSION}"
 echo
 
-CHANGELOG_VERSION=$(grep '^## \[' CHANGELOG.md | head -1 | cut -d ']' -f1 | cut -d '[' -f2)
-echo "changelog version: ${CHANGELOG_VERSION}"
+CHANGELOG_HEADER_VERSION=$(grep '^## \[' CHANGELOG.md | head -1 | cut -d ']' -f1 | cut -d '[' -f2)
+echo "changelog header: ${CHANGELOG_HEADER_VERSION}"
+
+CHANGELOG_LINK_VERSION=$(grep '^\[' CHANGELOG.md | head -1 | cut -d ']' -f1 | cut -d '[' -f2)
+echo "changelog link: ${CHANGELOG_LINK_VERSION}"
 echo
 
 echo "dist template version:"
