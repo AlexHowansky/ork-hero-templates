@@ -118,6 +118,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Portrait image decoder.
     //
+    // We don't actually care about the image file name. It is rendered in the
+    // portrait block only so that we can extract the extension here for use in
+    // the inline image's MIME type.
+    //
     // There is an odd bug in the template renderer, in that IMAGE_RELATIVE_URL
     // only works inside an IF_IMAGE block but an IF_IMAGE block with a newline
     // will break subsequent IF_IMAGE blocks that contain IMAGE_RELATIVE_URL.
