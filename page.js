@@ -130,4 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 acc += !(i - 1 & 1) ? String.fromCharCode(parseInt(imageHex.substring(i - 1, i + 1), 16)) : '', ''));
     }
 
+    // Apply initial light/dark theme based on user's browser preference.
+    document.querySelector('html').setAttribute('data-bs-theme', window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
 });
