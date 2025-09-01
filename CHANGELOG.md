@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0]
+
+### Added
+
+- New 9x16 layout for 16:9 monitors turned sideways.
+
 ## [0.9.0] - 2025-08-31
 
 ### Added

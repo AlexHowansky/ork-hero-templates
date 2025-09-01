@@ -17,6 +17,7 @@ This project contains a set of [HERO Designer](https://www.herogames.com/store/p
 
 - [8 x 9](https://alexhowansky.github.io/ork-hero-templates/examples/Azarra-8x9.html)
 - [16 x 9](https://alexhowansky.github.io/ork-hero-templates/examples/Azarra-16x9.html)
+- [9 x 16](https://alexhowansky.github.io/ork-hero-templates/examples/Azarra-9x16.html)
 
 ## Use
 
@@ -43,6 +44,7 @@ A layout defines a particular arrangement of display items. There are multiple l
 |-|-|
 |`Ork-16x9.hde`|This layout is designed to fit a maximized window on a 16:9 monitor. It crams as much information onto the screen as possible. It is most useful when you have multiple monitors.|
 |`Ork-8x9.hde`|This layout is designed to fit a half-wide window on a 16:9 monitor. It is most useful when splitting multiple windows on one monitor.|
+|`Ork-9x16.hde`|This layout is designed to fit a maximized window on a 16:9 monitor which has been physically turned 90 degrees to portrait mode.|
 
 ### Tabs
 
