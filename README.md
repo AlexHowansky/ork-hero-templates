@@ -7,7 +7,7 @@ This project contains a set of [HERO Designer](https://www.herogames.com/store/p
 - [Multiple Layouts](#layouts) - choose which best fits your preferred window size
 - [Active Tabs](#tabs) - content is always above the fold
 - [Embedded Portrait](#embedded-portrait) - no separate image file required
-- [Light and Dark Mode](#light-and-dark-mode) - both on the same sheet
+- [Light and Dark Mode](#light-and-dark-mode) - both on the same sheet, automatically defaulted to user preference
 - [Integrated Die Roller](#integrated-die-roller) - for most 3d6 rolls
 - [Collapsible Blocks](#collapsible-blocks) - hide the panels you don't need
 - [Hotkeys](#hotkeys) - keyboard shortcuts for common items
@@ -58,7 +58,7 @@ If a portrait image is provided, it will be embedded directly in the HTML file. 
 
 ### Light and Dark Mode
 
-Both light and dark modes are available on the same sheet. Press `t` to toggle between them.
+Both light and dark modes are available on the same sheet. Press `t` to toggle between them. The sheet will render initially according to the user's preferred browser setting.
 
 ![light mode](media/light.png)
 ![dark mode](media/dark.png)
