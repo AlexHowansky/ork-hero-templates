@@ -58,14 +58,14 @@
 #die-roller-modal-result[data-result='failure']::before {
     color: var(--bs-danger);
     content: '\f165';
-    font-family: 'Font Awesome 6 Free';
+    font-family: 'Font Awesome 7 Free';
     padding-right: 0.5rem;
 }
 
 #die-roller-modal-result[data-result='success']::before {
     color: var(--bs-primary);
     content: '\f164';
-    font-family: 'Font Awesome 6 Free';
+    font-family: 'Font Awesome 7 Free';
     padding-right: 0.5rem;
 }
 
@@ -77,7 +77,7 @@
 .list::before {
     color: var(--bs-secondary);
     content: '\f0ca';
-    font-family: 'Font Awesome 6 Free';
+    font-family: 'Font Awesome 7 Free';
 }
 
 .list-item::before {
