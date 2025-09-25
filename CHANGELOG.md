@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.0]
+## [1.0.0] - 2025-09-25
 
 ### Added
 
@@ -13,6 +13,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Changed
 
 - Updated Bootstrap, ChartJS, and FontAwesome dependencies.
+
+### Fixed
+
+- Fixed a bug that caused automatic theme detection to fail when there was no character portrait.
 
 ## [0.9.0] - 2025-08-31
 
@@ -89,6 +93,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - Initial version.
 
+[1.0.0]: https://github.com/AlexHowansky/ork-hero-templates/compare/0.9.0...1.0.0
 [0.9.0]: https://github.com/AlexHowansky/ork-hero-templates/compare/0.8.0...0.9.0
 [0.8.0]: https://github.com/AlexHowansky/ork-hero-templates/compare/0.7.0...0.8.0
 [0.7.0]: https://github.com/AlexHowansky/ork-hero-templates/compare/0.6.0...0.7.0

@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // As a result, if we want nice formatting (i.e., line breaks) in the
     // portrait block where IF_IMAGE is used, then we must also consume the
     // IMAGE_RELATIVE_URL tag there.
-    if (imageHex) {
+    if (typeof imageHex !== 'undefined') {
         document.getElementById('portrait-image').src =
             'data:image/' + imageName.split('.').pop() + ';base64,' + btoa([...imageHex].reduce((acc, _, i) =>
                 acc += !(i - 1 & 1) ? String.fromCharCode(parseInt(imageHex.substring(i - 1, i + 1), 16)) : '', ''));
