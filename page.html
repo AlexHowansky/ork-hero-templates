@@ -25,6 +25,9 @@ build a new template.
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="HERO Designer Character: <!--CHARACTER_NAME-->">
+        <meta name="hero_application_version" content="<!--APP_VERSION-->">
+        <meta name="hero_character_file" content="<!--CHARACTER_FILE-->">
+        <meta name="hero_character_save_timestamp" content="<!--CHARACTER_SAVE_TIMESTAMP-->">
         <title><!--CHARACTER_NAME--></title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -34,7 +37,7 @@ build a new template.
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js" integrity="sha512-Y51n9mtKTVBh3Jbx5pZSJNDDMyY+yGe77DGtBPzRlgsf/YLCh13kSZ3JmfHGzYFCmOndraf0sQgfM654b7dJ3w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>/*JS*/</script>
     </head>
-    <body>
+    <body data-edition="<!--OMCV-->6<!--/OMCV-->">
         <div class="container-fluid ps-3 pt-1">
             <div class="row">
                 <div class="col">
@@ -76,5 +79,6 @@ build a new template.
                 </div>
             </div>
         </div>
+        <script>document.querySelectorAll(document.body.dataset.edition == 6 ? '.ed5' : '.ed6').forEach(element => element.style.display = 'none');</script>
     </body>
 </html>

@@ -4,6 +4,7 @@ This project contains a set of [HERO Designer](https://www.herogames.com/store/p
 
 ## Features
 
+- Automatic Edition Detection - works with both 5th and 6th edition characters
 - [Multiple Layouts](#layouts) - choose which best fits your preferred window size
 - [Active Tabs](#tabs) - content is always above the fold
 - [Embedded Portrait](#embedded-portrait) - no separate image file required
