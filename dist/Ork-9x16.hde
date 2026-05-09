@@ -570,6 +570,56 @@ Talents
 </div>
 <!--/IFTALENTS-->
 
+<div class="block" id="points-block">
+<div class="block-title" data-bs-toggle="collapse" data-bs-target="#points-collapse">
+Points
+<i class="collapse-expand fa-solid fa-caret-down"></i>
+<i class="collapse-shrink fa-solid fa-caret-up"></i>
+</div>
+<div id="points-collapse" class="collapse show">
+<table class="table table-sm table-borderless table-striped">
+<thead class="table-secondary">
+<tr>
+<th>Description</th>
+<th class="text-end">Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Base</td>
+<td class="text-end"><!--BASE_POINTS--></td>
+</tr>
+<tr>
+<td>Disads Allowed</td>
+<td class="text-end"><!--DISAD_POINTS_ALLOWED--></td>
+</tr>
+<tr>
+<td>Disads Used</td>
+<td class="text-end"><!--DISAD_POINTS--></td>
+</tr>
+<tr>
+<td>XP Earned</td>
+<td class="text-end"><!--EARNED_EXP--></td>
+</tr>
+<tr>
+<td>XP Spent</td>
+<td class="text-end"><!--SPENT_EXP--></td>
+</tr>
+<tr>
+<td>XP Unspent</td>
+<td class="text-end"><!--UNSPENT_EXP--></td>
+</tr>
+</tbody>
+<tfoot class="table-secondary">
+<tr>
+<th class="text-end">Total Points</th>
+<th class="text-end"><!--TOTAL_POINTS--></th>
+</tr>
+</tfoot>
+</table>
+</div>
+</div>
+
 </div>
 </div>
 </div>
